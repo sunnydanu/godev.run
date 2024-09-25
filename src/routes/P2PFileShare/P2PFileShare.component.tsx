@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import   { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const P2PFileShare = () => {
 	const [htmlContent, setHtmlContent] = useState('');
+    const location = useLocation();
+  
+    // Function to parse query parameters
+    const queryParams = new URLSearchParams(location.search);
+    const page = queryParams.get('s') ? '/receive/' : '/'; //
 
+    console.log(page)
     useEffect(() => {
         const fetchHtmlFile = async () => {
             try {
-                const response = await fetch('/index.html');
+                const response = await fetch(`/p2p${page}index.html`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

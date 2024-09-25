@@ -81,11 +81,17 @@ const AppLayout: FC = () => {
 	const [searchQuery, setSearchQuery] = useState('')
 	
 	const menuItems: MenuProps['items'] = useMemo(() => {
-		const createMenuItem = (toolRoute: IToolRoute): ItemType => ({
-			label: <Link to={toolRoute.path}>{toolRoute.label}</Link>,
-			key: toolRoute.path,
-			icon: React.createElement(toolRoute.icon)
-		})
+		const createMenuItem = (toolRoute: IToolRoute): ItemType | null => {
+			if (toolRoute.path.includes('/zero-share/receive')) {
+				return null; // Skip this item
+			}
+		
+			return {
+				label: <Link to={toolRoute.path}>{toolRoute.label}</Link>,
+				key: toolRoute.path,
+				icon: React.createElement(toolRoute.icon),
+			};
+		};
 		
 		const menuItemGroups: MenuItemGroupType[] = TOOL_ROUTES.map(toolRouteGroup => ({
 			type: 'group',
