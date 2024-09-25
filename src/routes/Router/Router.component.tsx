@@ -12,6 +12,7 @@ import Home from '../Home/Home.component'
 import { Suspense } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import InternalError from '../../components/InternalError/InternalError.component'
+import P2PFileShare from "../P2PFileShare/P2PFileShare.component"
 
 const router = createBrowserRouter([
 	{
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
 					path: '/',
 					element: <Home />
 				},
+				{
+					path: '/zero-share/receive', // zero-share app route
+					element: <P2PFileShare />,
+				},
+				
 				...TOOL_ROUTES.reduce((acc, toolRouteGroup) => {
 					toolRouteGroup.routes.forEach(({path, component: Component}) => acc.push({
 						path: path,

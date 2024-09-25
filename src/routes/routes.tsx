@@ -40,6 +40,21 @@ export interface IToolRouteGroup {
 }
 
 export const TOOL_ROUTES: IToolRouteGroup[] = [
+	// {
+	// 	label: "File Share",
+	// 	routes:[ 
+			
+	// 		{
+	// 			label: 'P2P File Sharing',
+	// 			path: '/',
+	// 			component: lazy(() => import('./P2PFileShare/P2PFileShare.component')),
+	// 			icon: MenuUnfoldOutlined,
+	// 			alias: ['P2P file sharing', 'Send Files'],
+	// 			description: 'A client-side secure P2P file sharing using WebRTC.'
+	// 		},
+			 
+	// 	]
+	// },
 	{
 		label: 'HTML / CSS / Js tools',
 		routes: [
