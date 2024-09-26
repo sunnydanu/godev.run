@@ -6,7 +6,7 @@ test.describe('Tool - Text to ASCII binary', () => {
   });
 
   test('Has correct title', async ({ page }) => {
-    await expect(page).toHaveTitle('Text to ASCII binary - IT Tools');
+    await expect(page).toHaveTitle('GoDev.Run - Text to ASCII binary');
   });
 
   test('Text to binary conversion', async ({ page }) => {
