@@ -32,9 +32,9 @@ const router = createRouter({
       component: () => import('./pages/About.vue'),
     },
     {
-      path: '/file-transfer/receive/',
+      path: '/peer-share/receive/',
       name: 'file-transfer',
-      component: () => import('./tools/file-transfer/file-transfer.vue'),
+      component: () => import('./tools/peer-share/peer-share.vue'),
     },
     ...toolsRoutes,
     ...toolsRedirectRoutes,

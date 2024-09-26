@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-const fileTransferContainer = ref<HTMLElement | null>(null);
+const peerShareContainer = ref<HTMLElement | null>(null);
 const route = useRoute(); // Access the current route
 
 function executeScripts(html: string) {
@@ -26,16 +26,16 @@ function executeScripts(html: string) {
 }
 onMounted(() => {
   // Determine which HTML file to load based on the route and query parameters
-  const isReceive = route.path === '/send-files/receive';
+  const isReceive = route.path === '/peer-share/receive';
   const htmlFile = isReceive && route.query.s ? '/receive/' : '/';
 
   // Fetch the React index.html
   fetch(`/p2p/${htmlFile}index.html`)
     .then(response => response.text())
     .then((html) => {
-      if (fileTransferContainer.value) {
+      if (peerShareContainer.value) {
         // Insert the HTML into the container
-        fileTransferContainer.value.innerHTML = html;
+        peerShareContainer.value.innerHTML = html;
         // Load React scripts dynamically
 
         executeScripts(html);
@@ -48,5 +48,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="fileTransferContainer" />
+  <div ref="peerShareContainer" />
 </template>
