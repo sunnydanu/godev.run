@@ -1,7 +1,0 @@
-lorem
-ipsum
-sit
-amet
-consectetur
-adipiscing
-elit
