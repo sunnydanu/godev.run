@@ -30,7 +30,7 @@ onMounted(() => {
   const htmlFile = isReceive && route.query.s ? '/receive/' : '/';
 
   // Fetch the React index.html
-  fetch(`/p2p/${htmlFile}index.html`)
+  fetch(`/p2p${htmlFile}index.html`)
     .then(response => response.text())
     .then((html) => {
       if (peerShareContainer.value) {
