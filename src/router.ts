@@ -31,6 +31,11 @@ const router = createRouter({
       name: 'about',
       component: () => import('./pages/About.vue'),
     },
+    {
+      path: '/file-transfer/receive/',
+      name: 'file-transfer',
+      component: () => import('./tools/file-transfer/file-transfer.vue'),
+    },
     ...toolsRoutes,
     ...toolsRedirectRoutes,
     ...(config.app.env === 'development' ? demoRoutes : []),
