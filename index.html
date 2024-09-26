@@ -1,31 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GoDevRun - All-in-one Toolkit for Developers</title>
+    <title>GoDev.Run - Solutions Crafted For Developer</title>
+    <meta itemprop="name" content="GoDev.Run - Solutions Crafted For Developer" />
+    <meta
+      name="description"
+      content="Collection of handy online tools for developers, with great UX. GoDev.Run is a free collection of handy online tools for developers & people working in IT."
+    />
+    <meta
+      itemprop="description"
+      content="Collection of handy online tools for developers, with great UX. IT Tools is a free collection of handy online tools for developers & people working in IT."
+    />
+    <link rel="author" href="humans.txt" />
+    <link rel="canonical" href="https://godev.run" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#1677ff">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#18a058" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- OpenGraph meta -->
-    <meta property="og:title" content="GoDevRun - All-in-one Toolkit for Developers" />
-    <meta property="og:description" content="Stop pasting your code on random websites, GoDevRun centralizes all your go-to utilities in one convenient location with 45+ carefully crafted tools." />
-    <meta property="og:image" content="/thumbnail.png" />
+    <meta property="og:url" content="https://godev.run/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GoDev.Run - Solutions Crafted For Developer" />
+    <meta
+      property="og:description"
+      content="Collection of handy online tools for developers, with great UX. GoDev.Run is a free collection of handy online tools for developers & people working in IT."
+    />
+    <meta property="og:image" content="https://godev.run/banner.png?v=2" />
+ 
 
-    <!-- Meta for twitter -->
-    <meta name="twitter:title" content="GoDevRun - All-in-one Toolkit for Developers" />
-    <meta name="twitter:description" content="Stop pasting your code on random websites, GoDevRun centralizes all your go-to utilities in one convenient location with 45+ carefully crafted tools." />
-    <meta name="twitter:image" content="/thumbnail.png" />
+    <meta name="twitter:title" content="GoDev.Run - Solutions Crafted For Developer" />
+    <meta
+      name="twitter:description"
+      content="Collection of handy online tools for developers, with great UX. GoDev.Run is a free  collection of handy online tools for developers & people working in IT."
+    />
+    <meta name="twitter:image" content="https://godev.run/banner.png?v=2" />
+    <meta name="twitter:image:alt" content="GoDev.Run - Solutions Crafted For Developer" />
   </head>
   <body>
-    <div id="root"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-minifier/4.0.0/htmlminifier.min.js"></script>
-    <script>
-      window.htmlMinifier = require("html-minifier")
-      window.Buffer = function() {}
-    </script>
-    <script type="module" src="/src/index.tsx"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

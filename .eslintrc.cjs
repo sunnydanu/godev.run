@@ -1,26 +1,21 @@
+/**
+ * @type {import('eslint').Linter.Config}
+ */
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  extends: ['@antfu', './.eslintrc-auto-import.json', '@unocss'],
+
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    '@typescript-eslint/ban-types': [
-      'error',
-      {
-        'types': {
-          'Function': false
-        }
-      }
-    ]
+    'curly': ['error', 'all'],
+    '@typescript-eslint/semi': ['error', 'always'],
+    '@typescript-eslint/no-use-before-define': ['error', { allowNamedExports: true, functions: false }],
+    'vue/no-empty-component-block': ['error'],
+    'no-restricted-imports': ['error', {
+      paths: [{
+        name: '@vueuse/core',
+        importNames: ['useClipboard'],
+        message: 'Please use local useCopy from src/composable/copy.ts instead of useClipboard.',
+      }],
+    }],
   },
-}
+};
