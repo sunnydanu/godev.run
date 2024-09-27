@@ -5,20 +5,26 @@ All notable changes to this project will be documented in this file. See [standa
 ## Version 2024.09.27-f5175cc
 
 ### Other
--  readme updated (9a31909)
+- minor fix (f5175cc)
+- minor fix (855810e)
+ 
+### Documentation
+- **doc**: readme updated (9a31909)
 
-### Godev.run
--  v2 - minor fix (f5175cc)
--  v2 - lang file updated (f65ac54)
--  v2 - min-h-screen removed (bbdb0ef)
--  v2 - conflicting css fixed, file-transfer receiver page layout fixed (d0f1568)
--  v2 - fix p2p index and broken link (2de7c0d)
--  v2 - minor fix (855810e)
--  v2 - renamed file-transfer to peer-share (1cfc797)
--  v2 - lint fix (b8088bb)
--  v2 - file-transfer - minor fix (3dda0e8)
--  v2 - New Tool added - File Transfer - A client-side secure P2P file sharing using WebRTC (1bcf523)
--  v2 - title updated (410e673)
+### Features
+- **i18n**: lang file updated (f65ac54)
+- **new tool**: File Transfer - A client-side secure P2P file sharing using WebRTC (1bcf523)
+
+### Bug fixes
+- **file-transfer**: min-h-screen removed (bbdb0ef)
+- **file-transfer**: fix p2p index and broken link (2de7c0d)
+- **file-transfer**: conflicting css fixed, file-transfer receiver page layout fixed (d0f1568)
+- **file-transfer**: minor fix (3dda0e8)
+
+### Refactoring
+- **lint**: lint fix (b8088bb)
+- **file-transfer**: renamed file-transfer to peer-share (1cfc797) 
+- **tools**: title updated (410e673)
 
 ## Version 2024.05.13-a0bc346
 
