@@ -39,7 +39,7 @@ about:
 
     IT Tools được tạo ra bằng Vue.js (Vue 3) với thư viện thành phần Naive UI và được lưu trữ và triển khai liên tục bởi Vercel. Các thư viện mã nguồn mở của bên thứ ba được sử dụng trong một số công cụ, bạn có thể tìm danh sách đầy đủ trong file [package.json](https://github.com/CorentinTh/it-tools/blob/main/package.json) của kho lưu trữ.
 
-    ## Phát hiện lỗi? Một công cụ bị thiếu?
+    ## Bạn đã tìm thấy lỗi? Một công cụ còn thiếu?
 
     Nếu bạn cần một công cụ hiện không có ở đây, và bạn nghĩ rằng nó có thể hữu ích, bạn được chào đón để gửi một yêu cầu tính năng trong [phần vấn đề](https://github.com/CorentinTh/it-tools/issues/new/choose) trong kho GitHub.
 
