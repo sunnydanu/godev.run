@@ -30,17 +30,33 @@ about:
   content: >
     # À propos de IT-Tools
 
-    Ce merveilleux site, fait avec ❤ par [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about), regroupe des outils utiles pour les développeurs et les personnes travaillant dans l'informatique. Si vous le trouvez utile, n'hésitez pas à le partager et n'oubliez pas de le mettre dans vos favoris !
+    Ce merveilleux site, créé avec ❤ par [Sunny Danu](https://github.com/sunnydanu), 
+    agrège des outils utiles pour les développeurs et les personnes travaillant dans l'IT. 
+    Si vous le trouvez utile, n'hésitez pas à le partager avec des personnes 
+    que vous pensez également trouver cela utile et n'oubliez pas de le 
+    mettre en favori dans votre barre de raccourcis !
 
-    IT Tools est open-source (sous licence MIT) et gratuit, et le restera toujours, mais cela me coûte de l'argent pour l'héberger et renouveler le nom de domaine. Si vous voulez soutenir mon travail, et m'encourager à ajouter plus d'outils, n'hésitez pas à me [soutenir](https://www.buymeacoffee.com/cthmsst).
+    GoDev.Run est gratuit et le sera toujours, mais cela me coûte de l'argent 
+    pour héberger et renouveler le nom de domaine. Si vous souhaitez soutenir 
+    mon travail et m'encourager à ajouter plus d'outils, envisagez de me 
+    soutenir en me [sponsorisant](https://www.buymeacoffee.com/sunnydanu).
 
     ## Technologies
 
-    IT Tools est fait en Vue.js (Vue 3) avec la bibliothèque de composants Naive UI et est hébergé et déployé en continu par Vercel. Des bibliothèques open-source tierces sont utilisées dans certains outils, vous pouvez trouver la liste complète dans le fichier [package.json](https://github.com/CorentinTh/it-tools/blob/main/package.json) du dépôt.
+    GoDev.Run est fait en Vue.js (Vue 3) avec la bibliothèque de composants 
+    Naive UI. Des bibliothèques open source tierces sont utilisées dans certains outils.
 
     ## Vous avez trouvé un bug ? Un outil manque ?
 
-    Si vous avez besoin d'un outil qui n'est pas encore présent ici, et que vous pensez qu'il peut être utile, vous êtes invité à soumettre une demande de fonctionnalité dans la [section issue](https://github.com/CorentinTh/it-tools/issues/new/choose) du dépôt GitHub.
+    Si vous avez besoin d'un outil qui n'est actuellement pas présent ici, 
+    et que vous pensez qu'il peut être utile, vous êtes le bienvenu pour soumettre 
+    une demande de fonctionnalité dans la [section des problèmes](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    du dépôt GitHub.
+
+    Et si vous avez trouvé un bug, ou si quelque chose ne fonctionne pas comme prévu, 
+    veuillez soumettre un rapport de bug dans la 
+    [section des problèmes](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    du dépôt GitHub.
 
 404:
   notFound: '404 Not Found'
