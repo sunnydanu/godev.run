@@ -17,8 +17,8 @@ import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
-const version = '1.0.0' || config.app.version;
-const commitSha = '' || config.app.lastCommitSha.slice(0, 7);
+const version = config.app.version;
+const commitSha = config.app.lastCommitSha.slice(0, 7);
 
 const { tracker } = useTracker();
 const { t } = useI18n();
