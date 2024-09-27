@@ -28,21 +28,35 @@ home:
     mode: 'Trocar modo escuro/claro'
 about:
   content: >
-    # Sobre o GoDev.Run
+    # Sobre GoDev.Run
 
-    Este site maravilhoso, feito com ❤ por [Sunny Danu](https://github.com/sunnydanu), junta ferramentas úteis para desenvolvedores e outras pessoas que trabalham com TI. Se você achar o site útil, fique à vontade para compartilhar com quem também possa gostar e não esqueça de salvar o bookmark na sua barra de atalhos!
+    Este maravilhoso site, criado com ❤ por [Sunny Danu](https://github.com/sunnydanu), 
+    agrega ferramentas úteis para desenvolvedores e pessoas que trabalham em TI. 
+    Se você o achar útil, sinta-se à vontade para compartilhá-lo com pessoas 
+    que você acha que também podem achar útil e não se esqueça de adicioná-lo 
+    à sua barra de favoritos!
 
-    O GoDev.Run é código aberto (sob a licença MIT), é gratuito, e sempre será, mas custa dinheiro para hospedar e renovar o domínio. Se quiser apoiar meu trabalho e me encorajar a adicionar mais ferramentas, por favor considere [ser patrocinador](https://www.buymeacoffee.com/sunnydanu).
+    GoDev.Run é gratuito e sempre será, mas me custa dinheiro para hospedar 
+    e renovar o nome de domínio. Se você quiser apoiar meu trabalho e 
+    me incentivar a adicionar mais ferramentas, considere me apoiar através de 
+    [patrocinar-me](https://www.buymeacoffee.com/sunnydanu).
 
     ## Tecnologias
 
-    O GoDev.Run é feito em Vue.js (Vue 3) com a biblioteca de componentes Naive UI e é hospedado pela Vercel. Bibliotecas de código aberto de terceiros são usadas em algumas ferramentas e você pode encontrar a lista completa no arquivo [package.json](https://github.com/sunnydanu/help.godev.run/blob/main/package.json) do repositório.
+    GoDev.Run é feito em Vue.js (Vue 3) com a biblioteca de componentes 
+    Naive UI. Bibliotecas de código aberto de terceiros são usadas em algumas ferramentas.
 
-    ## Achou um bug? Está faltando uma ferramenta?
+    ## Encontrou um bug? Falta uma ferramenta?
 
-    Se você precisa de uma ferramenta que ainda não existe aqui e acha que pode ser útil, seu pedido será bem vindo na [seção de issues](https://github.com/sunnydanu/help.godev.run/issues/new/choose) no repositório do GitHub.
+    Se você precisar de uma ferramenta que atualmente não está presente aqui, 
+    e você acha que pode ser útil, sinta-se à vontade para enviar uma solicitação 
+    de recurso na [seção de problemas](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    no repositório do GitHub.
 
-    E se você encontrar um bug ou se algo não funcionar como esperado, por favor registre um relato de bug na [seção de issues](https://github.com/sunnydanu/help.godev.run/issues/new/choose) no GitHub.
+    E se você encontrou um bug ou algo não está funcionando como esperado, 
+    por favor, faça um relatório de bug na 
+    [seção de problemas](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    no repositório do GitHub.
 
 404:
   notFound: '404 Não Encontrado'
