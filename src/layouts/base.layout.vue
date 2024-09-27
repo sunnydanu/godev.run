@@ -63,7 +63,7 @@ const tools = computed<ToolCategory[]>(() => [
           <div>
             GoDev.Run
 
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/sunnydanu/help.godev.run/tree/v${version}`">
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/sunnydanu/help.godev.run/blob/master/CHANGELOG.md#version-${version}`">
               v{{ version }}
             </c-link>
 
@@ -73,7 +73,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/sunnydanu/help.godev.run/tree/${commitSha}`"
+                :href="`https://github.com/sunnydanu/help.godev.run/blob/master/CHANGELOG.md#version-${version}`"
               >
                 {{ commitSha }}
               </c-link>
