@@ -50,7 +50,7 @@ export const useCommandPaletteStore = defineStore('command-palette', () => {
       name: 'Github repository',
       href: 'https://github.com/CorentinTh/it-tools',
       category: 'External',
-      description: 'View the source code of it-tools on Github.',
+      description: 'View GoDev.Run on Github.',
       keywords: ['github', 'repo', 'repository', 'source', 'code'],
       icon: GithubIcon,
     },
@@ -64,7 +64,7 @@ export const useCommandPaletteStore = defineStore('command-palette', () => {
     },
     {
       name: 'About',
-      description: 'Learn more about IT-Tools.',
+      description: 'Learn more about GoDev.Run.',
       to: '/about',
       category: 'Pages',
       keywords: ['about', 'learn', 'more', 'info', 'information'],
