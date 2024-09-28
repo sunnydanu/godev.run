@@ -56,8 +56,8 @@ export const useCommandPaletteStore = defineStore('command-palette', () => {
     },
     {
       name: 'Report a bug or an issue',
-      description: 'Report a bug or an issue to help improve it-tools.',
-      href: 'https://github.com/CorentinTh/it-tools/issues/new/choose',
+      description: 'Report a bug or an issue to help improve GoDev.Run.',
+      href: 'https://github.com/sunnydanu/help.godev.run/issues/new/choose',
       category: 'Actions',
       keywords: ['report', 'issue', 'bug', 'problem', 'error'],
       icon: BugIcon,
