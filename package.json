@@ -32,7 +32,8 @@
     "lint": "eslint src --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "script:create:tool": "node scripts/create-tool.mjs",
     "script:create:ui": "hygen generator ui-component",
-    "release": "node ./scripts/release.mjs"
+    "release": "node ./scripts/release.mjs",
+    "preview:stage": "node ./scripts/serve.js"
   },
   "dependencies": {
     "@it-tools/bip39": "^0.0.4",
@@ -71,6 +72,7 @@
     "json5": "^2.2.3",
     "jwt-decode": "^3.1.2",
     "libphonenumber-js": "^1.10.28",
+    "livecodes": "^0.6.0",
     "lodash": "^4.17.21",
     "markdown-it": "^14.0.0",
     "marked": "^10.0.0",
@@ -129,6 +131,7 @@
     "@vue/tsconfig": "^0.4.0",
     "consola": "^3.0.2",
     "eslint": "^8.47.0",
+    "express": "^4.21.0",
     "hygen": "^6.2.11",
     "jsdom": "^22.0.0",
     "less": "^4.1.3",
