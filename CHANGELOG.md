@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2024.10.05-7c4f0a9
+
+### Features
+- **new tool**: Live code : Code Playground (06eccf4)
+
+### Bug fixes
+- **ui**: footer broken link to version (e42c874)
+
+### Refactoring
+- **ui**: reference updated (3adb844)
+- **file-transfer**: cleaned ui (97744c9)
+
+### Chores
+- **version**: release 20240927-f5175cc (dc67010)
+
+### Refector
+- **file-transfer**: icon updated (7c4f0a9)
+
+### Doc
+- **readme**: readme updated (96d7a1e)
+
 ## Version 2024.09.27-f5175cc
 
 ### Other
