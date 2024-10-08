@@ -55,6 +55,10 @@ export default defineConfig({
     svgLoader(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        // Increase the maximum file size to cache
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
+      },
       strategies: 'generateSW',
       manifest: {
         name: 'GoDev.Run',
