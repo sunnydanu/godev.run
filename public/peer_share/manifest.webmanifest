@@ -1,7 +1,7 @@
 {
-  "name": "GoDevRun - Zero Share",
-  "short_name": "GoDevRun - Zero Share",
-  "description": "A secure P2P file sharing using WebRTC without a server",
+  "name": "GoDevRun - Peer Share",
+  "short_name": "GoDevRun - Peer Share",
+  "description": "PeerShare: A secure client-side P2P connection offering features like file sharing and live clipboard.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
