@@ -33,13 +33,14 @@ const router = createRouter({
     },
     {
       path: '/peer-share/receive/',
-      name: 'file-transfer',
+      name: 'peer-share',
       component: () => import('./tools/peer-share/peer-share.vue'),
       meta: {
         layout: layouts.toolLayout,
-        name: 'File Transfer',
-        description: 'PeerShare - A client-side secure P2P file sharing using WebRTC',
-        keywords: ['send-files', 'file-transfer', 'file share', 'file sharing', 'P2P file sharing'],
+        name: 'Peer Share',
+        path: '/peer-share/',
+        description: 'PeerShare: A secure client-side P2P connection offering features like file sharing and live clipboard.',
+        keywords: ['send-files', 'file share', 'file sharing', 'Peer-to-Peer (P2P)', 'Secure Connection', 'Client-Side', 'File Sharing', 'Live Clipboard', 'Data Transfer', 'Collaboration', 'Real-Time Communication'],
         createdAt: new Date('2024-09-26'),
       },
     },

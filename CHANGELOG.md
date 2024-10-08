@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2024.10.08-0cdb2d0
+
+### Other
+-  chore(deps); removed obsolete packages (2311082)
+
+### Feat(peershare) 
+-  Reformed PeerShare to provide more p2p features - New Live Clipboard added (0cdb2d0)
+
 ## Version 2024.10.05-7c4f0a9
 
 ### Features
