@@ -48,5 +48,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="peerShareContainer" />
+  <div ref="peerShareContainer" class="peerShareContainer" />
 </template>
+
+<style lang="less">
+.peerShareContainer button.btn.btn-primary,.alert.alert-info {
+    background: #1ea54c;
+    border-color: #1ea54c;
+    color: rgba(255, 255, 255, 0.82);
+}
+</style>
