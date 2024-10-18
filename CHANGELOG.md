@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2024.10.18-ceb2cfe
+
+### Features
+- **new tool**: JSON Editor (74a332c)
+
+### Ui
+- **peer-share**: fixed css (ceb2cfe)
+
+### Refector
+- **peer-share**: url updated (9a9b778)
+
 ## Version 2024.10.08-94fed83
 
 ### Bug fixes
