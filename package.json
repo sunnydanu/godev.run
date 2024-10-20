@@ -1,6 +1,6 @@
 {
   "name": "godev-run",
-  "version": "2024.10.18-ceb2cfe",
+  "version": "2024.10.20-c90fb26",
   "packageManager": "pnpm@8.15.3",
   "description": "Collection of handy online tools for developers, with great UX.",
   "author": "Sunny Danu <mail@sunnydanu.com> (https://github.com/sunnydanu)",
