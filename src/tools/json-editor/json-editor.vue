@@ -20,8 +20,8 @@ const value = ref();
   --jse-theme: dark;
 
   /* over all fonts, sizes, and colors */
-  --jse-theme-color: #2f6dd0;
-  --jse-theme-color-highlight: #467cd2;
+  --jse-theme-color: #19863d;
+  --jse-theme-color-highlight: #4cc674;
   --jse-background-color: #1e1e1e;
   --jse-text-color: #d4d4d4;
   --jse-text-color-inverse: #4d4d4d;
@@ -130,5 +130,34 @@ const value = ref();
   /* color picker */
   --jse-color-picker-background: #656565;
   --jse-color-picker-border-box-shadow: #8c8c8c 0 0 0 1px;
+
+  .jse-table-mode-welcome.svelte-1q0ce0e .jse-nested-arrays button.jse-nested-array-action.svelte-1q0ce0e,
+  .jse-welcome.svelte-1eamlhk .jse-contents button.svelte-1eamlhk,
+  .jse-transform-modal-inner.svelte-rrrjnb .jse-modal-contents .jse-actions button.jse-primary.svelte-rrrjnb
+  {
+    line-height: 1;
+    font-family: inherit;
+    font-size: 14px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400;
+    color: #1ea54c;
+    transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    background-color: #18a0582f;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
+
+.jse-table-mode-welcome.svelte-1q0ce0e .jse-nested-arrays button.jse-nested-array-action.svelte-1q0ce0e:hover,
+.jse-welcome.svelte-1eamlhk .jse-contents button.svelte-1eamlhk:hover,
+.jse-transform-modal-inner.svelte-rrrjnb .jse-modal-contents .jse-actions button.jse-primary.svelte-rrrjnb:hover,
+button.jse-context-menu-button.svelte-1idfykj:not(:disabled):hover {
+    outline: 1px solid #1ea54c;
+    background-color: #18a0582f;
+}
+
+ }
 </style>
