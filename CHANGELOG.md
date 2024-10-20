@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2024.10.20-c90fb26
+
+### Chores
+- **peer-share**: theme update (89c8095)
+
+###  chore
+-  (json editor): theme updated (c90fb26)
+
 ## Version 2024.10.18-ceb2cfe
 
 ### Features
