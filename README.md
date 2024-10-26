@@ -3,7 +3,7 @@
 
 <picture>
     <source srcset="./.github/logo-dark.png" media="(prefers-color-scheme: light)">
-    <source srcset="./.github/logo-white.png" media="(prefers-color-scheme: dark)">
+    <source srcset="./.github/logo-white.png" media="(prefers-color-scheme: white)">
     <img src="./.github/logo-dark.png" alt="logo">
 </picture>
 
