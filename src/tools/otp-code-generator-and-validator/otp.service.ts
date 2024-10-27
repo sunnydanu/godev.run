@@ -107,7 +107,7 @@ function verifyTOTP({
 
 function buildKeyUri({
   secret,
-  app = 'GoDev.Run',
+  app = 'godev.run',
   account = 'demo-user',
   algorithm = 'SHA1',
   digits = 6,
