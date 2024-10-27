@@ -52,6 +52,7 @@ function updateJsonPath(selection: JSONEditorSelection) {
     </n-form-item>
   </div>
 </template>
+
 <style>
   /* load one or multiple themes */
   .jse-theme-dark {

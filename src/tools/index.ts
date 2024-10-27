@@ -161,7 +161,7 @@ export const toolsByCategory: ToolCategory[] = [
       chmodCalculator,
       dockerRunToDockerComposeConverter,
       xmlFormatter,
-      yamlViewer, 
+      yamlViewer,
       emailNormalizer,
       regexTester,
       regexMemo,
