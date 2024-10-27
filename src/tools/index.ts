@@ -4,9 +4,9 @@ import { tool as basicAuthGenerator } from './basic-auth-generator';
 import { tool as jsonEditor } from './json-editor';
 import { tool as liveCode } from './live-code';
 import { tool as emailNormalizer } from './email-normalizer';
+import { tool as energyComputer } from './energy-computer';
 import { tool as peerShare } from './peer-share';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
-
 import { tool as textToUnicode } from './text-to-unicode';
 import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as xmlToJson } from './xml-to-json';
@@ -177,7 +177,12 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Measurement',
-    components: [chronometer, temperatureConverter, benchmarkBuilder],
+    components: [
+      chronometer,
+      temperatureConverter,
+      benchmarkBuilder,
+      energyComputer,
+    ],
   },
   {
     name: 'Text',
