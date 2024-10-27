@@ -110,8 +110,6 @@ Coded with ❤️ by [Sunny Danu](//sunnydaun.com).
 
 This project is built upon the [it-tools](https://github.com/CorentinTh/it-tools) repository, which provides valuable tools and resources. I would like to express my gratitude to it's author, [Corentin Th](https://github.com/CorentinTh), and all the contributors for their contributions to the developer community.
 
-I plan to maintain a fork of the original project to contribute back any changes or improvements. You can find the fork here: [sunnydanu/it-tools](https://github.com/sunnydanu/it-tools).
-
 ## Contributors
 
 Big thanks to all the people who have already contributed!
