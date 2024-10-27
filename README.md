@@ -9,27 +9,21 @@
 
 ## Overview
 
-GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). 
+GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). to try what else i can do with javascript and how far we can go in building tools entirely on the client side—no servers needed.  
 
-Solutions created for developers. [Have a look !](https://godev.run).
+GoDev.Run - Just You and Your Browser [Have a look !](https://godev.run).
  
 **From docker hub:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 sunnydanu/godev-run:latest
 ```
 
 **From github packages:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corentinth/it-tools:latest
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/sunnydanu/godev-run:latest
 ```
-
-**Other solutions:**
-
-- [Cloudron](https://www.cloudron.io/store/tech.ittools.cloudron.html)
-- [Tipi](https://www.runtipi.io/docs/apps-available)
-- [Unraid](https://unraid.net/community/apps?q=it-tools)
 
 ## Contribute
 
