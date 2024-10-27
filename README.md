@@ -9,7 +9,7 @@
 
 ## Overview
 
-GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). to try what else i can do with javascript and how far we can go in building tools entirely on the client side—no servers needed.  
+GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). It explores what else I can do with JavaScript and how far we can go in building tools entirely on the client side—no servers needed.
 
 GoDev.Run - Just You and Your Browser [Have a look !](https://godev.run).
  
