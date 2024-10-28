@@ -1,4 +1,3 @@
 /* TEAM */
-Developer: Corentin Thomasset
-Site: https://github.com/CorentinTh
-Twitter: @cthmsst
+Developer: Sunny Danu
+Site: https://github.com/sunnydanu
