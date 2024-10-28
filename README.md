@@ -9,27 +9,21 @@
 
 ## Overview
 
-GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). 
+GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). It explores what else I can do with JavaScript and how far we can go in building tools entirely on the client side—no servers needed.
 
-Solutions created for developers. [Have a look !](https://godev.run).
+GoDev.Run - Just You and Your Browser [Have a look !](https://godev.run).
  
 **From docker hub:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 sunnydanu/godev-run:latest
 ```
 
 **From github packages:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corentinth/it-tools:latest
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/sunnydanu/godev-run:latest
 ```
-
-**Other solutions:**
-
-- [Cloudron](https://www.cloudron.io/store/tech.ittools.cloudron.html)
-- [Tipi](https://www.runtipi.io/docs/apps-available)
-- [Unraid](https://unraid.net/community/apps?q=it-tools)
 
 ## Contribute
 
@@ -106,13 +100,6 @@ pnpm run script:create:tool my-tool-name
 
 It will create a directory in `src/tools` with the correct files, and a the import in `src/tools/index.ts`. You will just need to add the imported tool in the proper category and develop the tool.
 
-## Licensing and Code Protection
-The code for this project is currently private and is not shared publicly. I do not permit unauthorized use or distribution of this code. 
-
-In the future, if I decide to make the code publicly available, I will specify a license at that time. Possible licenses may include a proprietary license or an open-source license such as MIT or GPL, depending on how I wish to share my work.
-
-For now, please respect the private status of this repository.
-
 ## Contact
 
 For inquiries or suggestions, feel free to reach out to me on my [GitHub Profile](https://github.com/sunnydanu).
@@ -122,8 +109,6 @@ For inquiries or suggestions, feel free to reach out to me on my [GitHub Profile
 Coded with ❤️ by [Sunny Danu](//sunnydaun.com).
 
 This project is built upon the [it-tools](https://github.com/CorentinTh/it-tools) repository, which provides valuable tools and resources. I would like to express my gratitude to it's author, [Corentin Th](https://github.com/CorentinTh), and all the contributors for their contributions to the developer community.
-
-I plan to maintain a fork of the original project to contribute back any changes or improvements. You can find the fork here: [sunnydanu/it-tools](https://github.com/sunnydanu/it-tools).
 
 ## Contributors
 
