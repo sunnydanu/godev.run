@@ -1,15 +1,33 @@
 <script setup lang="ts">
-import { compareSync, hashSync } from 'bcryptjs';
+import { argon2Verify, argon2id } from 'hash-wasm';
 import { useCopy } from '@/composable/copy';
 
 const input = ref('');
-const saltCount = ref(10);
-const hashed = computed(() => hashSync(input.value, saltCount.value));
+const iterations = ref(32);
+const memorySize = ref(512);
+const hashLength = ref(32);
+
+const hashed = computedAsync(
+  async () =>
+    argon2id({
+      password: input.value,
+      salt: window.crypto.getRandomValues(new Uint8Array(16)),
+      parallelism: 1,
+      iterations: iterations.value,
+      memorySize: memorySize.value,
+      hashLength: hashLength.value,
+      outputType: 'encoded',
+    }),
+  '',
+);
 const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
 
 const compareString = ref('');
 const compareHash = ref('');
-const compareMatch = computed(() => compareSync(compareString.value, compareHash.value));
+const compareMatch = computedAsync(
+  () => argon2Verify({ password: compareString.value, hash: compareHash.value }),
+  false,
+);
 </script>
 
 <template>
@@ -23,12 +41,26 @@ const compareMatch = computed(() => compareSync(compareString.value, compareHash
           autocorrect="off"
           autocapitalize="off"
           spellcheck="false"
+          :input-props="{
+            'data-test-id': 'input',
+          }"
         />
       </n-form-item>
-      <n-form-item label="Salt count: " label-placement="left">
-        <n-input-number v-model:value="saltCount" placeholder="Salt rounds..." :max="10" :min="0" w-full />
+      <n-form-item label="Iteration: " label-placement="left">
+        <n-input-number v-model:value="iterations" placeholder="Iterations..." min="0" w-full />
       </n-form-item>
-      <n-input :value="hashed" readonly style="text-align: center" />
+      <n-form-item label="Memory size: " label-placement="left">
+        <n-input-number v-model:value="memorySize" placeholder="Memory size..." min="0" w-full />
+      </n-form-item>
+      <n-input
+        :value="hashed"
+        readonly
+        style="text-align: center"
+        placeholder="Set a string to hash above..."
+        :input-props="{
+          'data-test-id': 'hash',
+        }"
+      />
     </n-form>
     <br>
     <n-space justify="center">
@@ -48,6 +80,9 @@ const compareMatch = computed(() => compareSync(compareString.value, compareHash
           autocorrect="off"
           autocapitalize="off"
           spellcheck="false"
+          :input-props="{
+            'data-test-id': 'compare-string',
+          }"
         />
       </n-form-item>
       <n-form-item label="Your hash: " label-placement="left">
@@ -58,15 +93,16 @@ const compareMatch = computed(() => compareSync(compareString.value, compareHash
           autocorrect="off"
           autocapitalize="off"
           spellcheck="false"
+          :input-props="{
+            'data-test-id': 'compare-hash',
+          }"
         />
       </n-form-item>
       <n-form-item label="Do they match ? " label-placement="left" :show-feedback="false">
-        <n-tag v-if="compareMatch" :bordered="false" type="success" round>
-          Yes
-        </n-tag>
-        <n-tag v-else :bordered="false" type="error" round>
-          No
-        </n-tag>
+        <span data-test-id="do-they-match">
+          <n-tag v-if="compareMatch" :bordered="false" type="success" round>Yes</n-tag>
+          <n-tag v-else :bordered="false" type="error" round>No</n-tag>
+        </span>
       </n-form-item>
     </n-form>
   </n-card>
