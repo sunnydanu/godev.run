@@ -1,3 +1,35 @@
+<script setup lang="ts">
+import { argon2Verify, argon2id } from 'hash-wasm';
+import { useCopy } from '@/composable/copy';
+
+const input = ref('');
+const iterations = ref(32);
+const memorySize = ref(512);
+const hashLength = ref(32);
+
+const hashed = computedAsync(
+  async () =>
+    argon2id({
+      password: input.value,
+      salt: window.crypto.getRandomValues(new Uint8Array(16)),
+      parallelism: 1,
+      iterations: iterations.value,
+      memorySize: memorySize.value,
+      hashLength: hashLength.value,
+      outputType: 'encoded',
+    }),
+  '',
+);
+const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
+
+const compareString = ref('');
+const compareHash = ref('');
+const compareMatch = computedAsync(
+  () => argon2Verify({ password: compareString.value, hash: compareHash.value }),
+  false,
+);
+</script>
+
 <template>
   <n-card title="Hash">
     <n-form label-width="120">
@@ -30,9 +62,11 @@
         }"
       />
     </n-form>
-    <br />
+    <br>
     <n-space justify="center">
-      <n-button secondary @click="copy"> Copy hash </n-button>
+      <n-button secondary @click="copy">
+        Copy hash
+      </n-button>
     </n-space>
   </n-card>
 
@@ -73,35 +107,3 @@
     </n-form>
   </n-card>
 </template>
-
-<script setup lang="ts">
-import { useCopy } from '@/composable/copy';
-import { argon2id, argon2Verify } from 'hash-wasm';
-
-const input = ref('');
-const iterations = ref(32);
-const memorySize = ref(512);
-const hashLength = ref(32);
-
-const hashed = computedAsync(
-  async () =>
-    argon2id({
-      password: input.value,
-      salt: window.crypto.getRandomValues(new Uint8Array(16)),
-      parallelism: 1,
-      iterations: iterations.value,
-      memorySize: memorySize.value,
-      hashLength: hashLength.value,
-      outputType: 'encoded',
-    }),
-  '',
-);
-const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
-
-const compareString = ref('');
-const compareHash = ref('');
-const compareMatch = computedAsync(
-  () => argon2Verify({ password: compareString.value, hash: compareHash.value }),
-  false,
-);
-</script>

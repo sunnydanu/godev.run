@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { compareSync, hashSync } from 'bcryptjs';
+import { useCopy } from '@/composable/copy';
+
+const input = ref('');
+const saltCount = ref(10);
+const hashed = computed(() => hashSync(input.value, saltCount.value));
+const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
+
+const compareString = ref('');
+const compareHash = ref('');
+const compareMatch = computed(() => compareSync(compareString.value, compareHash.value));
+</script>
+
 <template>
   <n-card title="Hash">
     <n-form label-width="120">
@@ -16,9 +30,11 @@
       </n-form-item>
       <n-input :value="hashed" readonly style="text-align: center" />
     </n-form>
-    <br />
+    <br>
     <n-space justify="center">
-      <n-button secondary @click="copy"> Copy hash </n-button>
+      <n-button secondary @click="copy">
+        Copy hash
+      </n-button>
     </n-space>
   </n-card>
 
@@ -45,24 +61,13 @@
         />
       </n-form-item>
       <n-form-item label="Do they match ? " label-placement="left" :show-feedback="false">
-        <n-tag v-if="compareMatch" :bordered="false" type="success" round>Yes</n-tag>
-        <n-tag v-else :bordered="false" type="error" round>No</n-tag>
+        <n-tag v-if="compareMatch" :bordered="false" type="success" round>
+          Yes
+        </n-tag>
+        <n-tag v-else :bordered="false" type="error" round>
+          No
+        </n-tag>
       </n-form-item>
     </n-form>
   </n-card>
 </template>
-
-<script setup lang="ts">
-import { compareSync, hashSync } from 'bcryptjs';
-import { useThemeVars } from 'naive-ui';
-import { useCopy } from '@/composable/copy';
-
-const input = ref('');
-const saltCount = ref(10);
-const hashed = computed(() => hashSync(input.value, saltCount.value));
-const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
-
-const compareString = ref('');
-const compareHash = ref('');
-const compareMatch = computed(() => compareSync(compareString.value, compareHash.value));
-</script>

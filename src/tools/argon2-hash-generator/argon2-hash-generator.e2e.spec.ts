@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.describe('Tool - Argon2 hash generator', () => {
   test.beforeEach(async ({ page }) => {
@@ -12,13 +12,13 @@ test.describe('Tool - Argon2 hash generator', () => {
   test('hash a string a verify that the result match', async ({ page }) => {
     await page.getByTestId('input').fill('azerty');
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 500));
     const hash = await page.getByTestId('hash').inputValue();
 
     await page.getByTestId('compare-string').fill('azerty');
     await page.getByTestId('compare-hash').fill(hash);
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 500));
     const doTheyMatch = await page.getByTestId('do-they-match').innerText();
 
     expect(doTheyMatch.trim()).toEqual('Yes');
