@@ -6,7 +6,7 @@ test.describe('Tool - Argon2 hash generator', () => {
   });
 
   test('Has correct title', async ({ page }) => {
-    await expect(page).toHaveTitle('Argon2 hash generator - IT Tools');
+    await expect(page).toHaveTitle('GoDev.Run - Argon2 hash generator');
   });
 
   test('hash a string a verify that the result match', async ({ page }) => {
