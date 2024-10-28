@@ -1,39 +1,53 @@
-![logo](.github/logo.png)
+ 
+ # [Godev.run](https://godev.run)
 
-Useful tools for developer and people working in IT. [Have a look !](https://it-tools.tech).
+<picture>
+    <source srcset="./.github/logo-dark.png" media="(prefers-color-scheme: light)">
+    <source srcset="./.github/logo-white.png" media="(prefers-color-scheme: white)">
+    <img src="./.github/logo-dark.png" alt="logo">
+</picture>
 
-## Functionalities and roadmap
+## Overview
 
-Please check the [issues](https://github.com/CorentinTh/it-tools/issues) to see if some feature listed to be implemented.
+GoDev.Run is a personal project inspired from [it-tools](https://github.com/CorentinTh/it-tools) by [Corentin Th](https://github.com/CorentinTh). It explores what else I can do with JavaScript and how far we can go in building tools entirely on the client side—no servers needed.
 
-You have an idea of a tool? Submit a [feature request](https://github.com/CorentinTh/it-tools/issues/new?assignees=corentinth&labels=&template=feature_request.md&title=)!
-
-## Self host
-
-Self host solutions for your homelab
-
+GoDev.Run - Just You and Your Browser [Have a look !](https://godev.run).
+ 
 **From docker hub:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 sunnydanu/godev-run:latest
 ```
 
 **From github packages:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corentinth/it-tools:latest
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/sunnydanu/godev-run:latest
 ```
-
-**Other solutions:**
-
-- [Tipi](https://www.runtipi.io/docs/apps-available)
-- [Unraid](https://unraid.net/community/apps?q=it-tools)
 
 ## Contribute
 
 ### Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) with the following extensions:
+
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
+
+with the following settings:
+
+```json
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "i18n-ally.localesPaths": ["locales", "src/tools/*/locales"],
+  "i18n-ally.keystyle": "nested"
+}
+```
 
 ### Type Support for `.vue` Imports in TS
 
@@ -81,20 +95,23 @@ pnpm lint
 To create a new tool, there is a script that generate the boilerplate of the new tool, simply run:
 
 ```sh
-pnpm run script:create-new-tool my-tool-name
+pnpm run script:create:tool my-tool-name
 ```
 
-It will create a directory in `src/tools` with the correct files, and a the import in `src/tools/index.ts`. You will just need to add the inported tool in the proper category and develop the tool.
+It will create a directory in `src/tools` with the correct files, and a the import in `src/tools/index.ts`. You will just need to add the imported tool in the proper category and develop the tool.
+
+## Contact
+
+For inquiries or suggestions, feel free to reach out to me on my [GitHub Profile](https://github.com/sunnydanu).
 
 ## Credits
 
-Coded with ❤️ by [Corentin Thomasset](//corentin-thomasset.fr).
+Coded with ❤️ by [Sunny Danu](//sunnydaun.com).
 
-This project is continuously deployed using [vercel.com](https://vercel.com).
+This project is built upon the [it-tools](https://github.com/CorentinTh/it-tools) repository, which provides valuable tools and resources. I would like to express my gratitude to it's author, [Corentin Th](https://github.com/CorentinTh), and all the contributors for their contributions to the developer community.
 
-<a href="https://www.producthunt.com/posts/it-tools?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-it&#0045;tools" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=345793&theme=light" alt="IT&#0032;Tools - Collection&#0032;of&#0032;handy&#0032;online&#0032;tools&#0032;for&#0032;devs&#0044;&#0032;with&#0032;great&#0032;UX | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-<a href="https://www.producthunt.com/posts/it-tools?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-it&#0045;tools" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=345793&theme=light&period=daily" alt="IT&#0032;Tools - Collection&#0032;of&#0032;handy&#0032;online&#0032;tools&#0032;for&#0032;devs&#0044;&#0032;with&#0032;great&#0032;UX | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+## Contributors
 
-## License
+Big thanks to all the people who have already contributed!
 
-This project is under the [GNU GPLv3](LICENSE).
+[![contributors](https://contrib.rocks/image?repo=corentinth/it-tools)](https://github.com/corentinth/it-tools/graphs/contributors)

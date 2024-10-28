@@ -53,8 +53,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { hashSync, compareSync } from 'bcryptjs';
+import { compareSync, hashSync } from 'bcryptjs';
+import { useThemeVars } from 'naive-ui';
 import { useCopy } from '@/composable/copy';
 
 const input = ref('');

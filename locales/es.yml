@@ -1,0 +1,85 @@
+home:
+  categories:
+    newestTools: Nuevas herramientas
+    favoriteTools: 'Tus herramientas favoritas'
+    allTools: 'Todas las herramientas'
+    favoritesDndToolTip: 'Arrastra y suelta para reordenar favoritos'
+  subtitle: 'Herramientas practicas para desarrolladores'
+  toggleMenu: 'Toggle menu'
+  home: Home
+  uiLib: 'UI Lib'
+  support: 'Apoyar el desarrollo de IT-Tools'
+  buyMeACoffee: 'Buy me a coffee'
+  follow:
+    title: 'Te gustan las GoDev.Run?'
+    p1: 'Danos una estrella en'
+    githubRepository: 'Repositorio de IT-Tools en GitHub'
+    p2: 'o síguenos en'
+    twitterXAccount: 'Cuenta de X de IT-Tools'
+    thankYou: 'Muchas gracias!'
+  nav:
+    github: 'Repositorio en github'
+    githubRepository: 'IT-Tools GitHub repository'
+    twitterX: 'Cuenta de X'
+    twitterXAccount: 'Cuenta de X de IT Tools'
+    about: 'Sobre  IT-Tools'
+    aboutLabel: 'Sobre'
+    darkMode: 'Modo obscuro'
+    lightMode: 'Modo claro'
+    mode: 'Alternar modo oscuro/claro'
+about:
+  content: >
+    # Sobre IT-Tools
+
+    Este maravilloso sitio web, creado con ❤ por [Sunny Danu](https://github.com/sunnydanu), 
+    agrega herramientas útiles para desarrolladores y personas que trabajan en TI. 
+    Si lo encuentras útil, no dudes en compartirlo con personas que creas que 
+    también pueden encontrarlo útil y no olvides marcarlo en tu barra de accesos directos!
+
+    GoDev.Run es gratuito y siempre lo será, pero me cuesta dinero alojar 
+    y renovar el nombre de dominio. Si deseas apoyar mi trabajo y 
+    animarme a agregar más herramientas, considera apoyarme a través de 
+    [patrocinarme](https://www.buymeacoffee.com/sunnydanu).
+
+    ## Tecnologías
+
+    GoDev.Run está hecho en Vue.js (Vue 3) con la biblioteca de componentes 
+    Naive UI. Se utilizan bibliotecas de código abierto de terceros en algunas herramientas.
+
+    ## ¿Encontraste un error? ¿Falta una herramienta?
+
+    Si necesitas una herramienta que actualmente no está presente aquí y 
+    crees que puede ser útil, eres bienvenido a enviar una solicitud de 
+    función en la [sección de problemas](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    en el repositorio de GitHub.
+
+    Y si encontraste un error o algo no funciona como se esperaba, 
+    por favor presenta un informe de error en la 
+    [sección de problemas](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    en el repositorio de GitHub.
+
+404:
+  notFound: '404 Not Found'
+  sorry: 'Lo sentimos, esta página no parece existir'
+  maybe: 'Tal vez el caché esté haciendo cosas raras, ¿probamos a refrescar forzosamente?'
+  backHome: 'Back home'
+favoriteButton:
+  remove: 'Quitar de favoritos'
+  add: 'Añadir a favoritos'
+toolCard:
+  new: Nuevo
+search:
+  label: Buscar
+tools:
+  categories:
+    favorite-tools: 'Tus herramientas favoritas'
+    crypto: Crypto
+    converter: Converter
+    web: Web
+    images and videos: 'Images & Videos'
+    development: Development
+    network: Network
+    math: Math
+    measurement: Measurement
+    text: Text
+    data: Data

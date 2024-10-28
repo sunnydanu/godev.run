@@ -12,7 +12,7 @@ export const config = figue({
       doc: 'Application last commit SHA version',
       format: 'string',
       default: '',
-      env: 'VITE_VERCEL_GIT_COMMIT_SHA',
+      env: 'VITE_APP_GIT_COMMIT_SHA',
     },
     baseUrl: {
       doc: 'Application base url',
@@ -23,9 +23,9 @@ export const config = figue({
     env: {
       doc: 'Application current env',
       format: 'enum',
-      values: ['production', 'development', 'test'],
+      values: ['production', 'development', 'preview', 'test'],
       default: 'development',
-      env: 'MODE',
+      env: 'VITE_APP_ENV',
     },
   },
   plausible: {
@@ -58,6 +58,12 @@ export const config = figue({
     format: 'boolean',
     default: false,
     env: 'VITE_SHOW_BANNER',
+  },
+  showSponsorBanner: {
+    doc: 'Show the sponsor banner',
+    format: 'boolean',
+    default: false,
+    env: 'VITE_SHOW_SPONSOR_BANNER',
   },
 })
   .loadEnv({

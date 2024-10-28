@@ -1,50 +1,40 @@
+<script setup lang="ts">
+import type { UAParser } from 'ua-parser-js';
+import type { UserAgentResultSection } from './user-agent-parser.types';
+
+const props = defineProps<{
+  userAgentInfo?: UAParser.IResult
+  sections: UserAgentResultSection[]
+}>();
+const { userAgentInfo, sections } = toRefs(props);
+</script>
+
 <template>
   <div>
     <n-grid :x-gap="12" :y-gap="8" cols="1 s:2" responsive="screen">
       <n-gi v-for="{ heading, icon, content } in sections" :key="heading">
-        <n-card style="height: 100%">
-          <n-page-header>
-            <template #title>
-              {{ heading }}
-            </template>
-            <template v-if="icon" #avatar>
-              <n-icon size="30" :component="icon" :depth="3" />
-            </template>
-          </n-page-header>
+        <c-card h-full>
+          <div flex items-center gap-3>
+            <n-icon size="30" :component="icon" :depth="3" />
+            <span text-lg>{{ heading }}</span>
+          </div>
 
-          <br />
-
-          <n-space>
+          <div mt-5 flex gap-2>
             <span v-for="{ label, getValue } in content" :key="label">
-              <n-tooltip v-if="getValue(userAgentInfo)" trigger="hover">
-                <template #trigger>
-                  <n-tag type="success" size="large" round :bordered="false">
-                    {{ getValue(userAgentInfo) }}
-                  </n-tag>
-                </template>
-                {{ label }}
-              </n-tooltip>
+              <c-tooltip v-if="getValue(userAgentInfo)" :tooltip="label">
+                <n-tag type="success" size="large" round :bordered="false">
+                  {{ getValue(userAgentInfo) }}
+                </n-tag>
+              </c-tooltip>
             </span>
-          </n-space>
-          <n-space vertical>
+          </div>
+          <div flex flex-col>
             <span v-for="{ label, getValue, undefinedFallback } in content" :key="label">
-              <n-text v-if="getValue(userAgentInfo) === undefined" depth="3">{{ undefinedFallback }}</n-text>
+              <span v-if="getValue(userAgentInfo) === undefined" op-70>{{ undefinedFallback }}</span>
             </span>
-          </n-space>
-        </n-card>
+          </div>
+        </c-card>
       </n-gi>
     </n-grid>
   </div>
 </template>
-
-<script setup lang="ts">
-import { toRefs } from 'vue';
-import { UAParser } from 'ua-parser-js';
-import type { UserAgentResultSection } from './user-agent-parser.types';
-
-const props = defineProps<{
-  userAgentInfo?: UAParser.IResult;
-  sections: UserAgentResultSection[];
-}>();
-const { userAgentInfo, sections } = toRefs(props);
-</script>

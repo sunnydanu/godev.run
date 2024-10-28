@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.describe('Date time converter - json to yaml', () => {
   test.beforeEach(async ({ page }) => {
@@ -6,7 +6,7 @@ test.describe('Date time converter - json to yaml', () => {
   });
 
   test('Has correct title', async ({ page }) => {
-    await expect(page).toHaveTitle('Date-time converter - IT Tools');
+    await expect(page).toHaveTitle('GoDev.Run - Date-time converter');
   });
 
   test('Format is auto detected from a date and the date is correctly converted', async ({ page }) => {
@@ -29,5 +29,6 @@ test.describe('Date time converter - json to yaml', () => {
     expect((await page.getByTestId('Timestamp').inputValue()).trim()).toEqual('1681333824000');
     expect((await page.getByTestId('UTC format').inputValue()).trim()).toEqual('Wed, 12 Apr 2023 21:10:24 GMT');
     expect((await page.getByTestId('Mongo ObjectID').inputValue()).trim()).toEqual('64371e400000000000000000');
+    expect((await page.getByTestId('Excel date/time').inputValue()).trim()).toEqual('45028.88222222222');
   });
 });

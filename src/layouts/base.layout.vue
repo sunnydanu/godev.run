@@ -1,19 +1,19 @@
 <script lang="ts" setup>
 import { NIcon, useThemeVars } from 'naive-ui';
-import { computed } from 'vue';
+
 import { RouterLink } from 'vue-router';
-import { Heart, Menu2, Home2 } from '@vicons/tabler';
-import { toolsByCategory } from '@/tools';
+import { Heart, Home2, Menu2 } from '@vicons/tabler';
+
+import { storeToRefs } from 'pinia';
+import HeroGradient from '../assets/hero-gradient.svg?component';
+import MenuLayout from '../components/MenuLayout.vue';
+import NavbarButtons from '../components/NavbarButtons.vue';
 import { useStyleStore } from '@/stores/style.store';
 import { config } from '@/config';
 import type { ToolCategory } from '@/tools/tools.types';
 import { useToolStore } from '@/tools/tools.store';
 import { useTracker } from '@/modules/tracker/tracker.services';
 import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
-import SearchBar from '../components/SearchBar.vue';
-import HeroGradient from '../assets/hero-gradient.svg?component';
-import MenuLayout from '../components/MenuLayout.vue';
-import NavbarButtons from '../components/NavbarButtons.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
@@ -21,133 +21,123 @@ const version = config.app.version;
 const commitSha = config.app.lastCommitSha.slice(0, 7);
 
 const { tracker } = useTracker();
+const { t } = useI18n();
 
 const toolStore = useToolStore();
+const { favoriteTools, toolsByCategory } = storeToRefs(toolStore);
 
 const tools = computed<ToolCategory[]>(() => [
-  ...(toolStore.favoriteTools.length > 0 ? [{ name: 'Your favorite tools', components: toolStore.favoriteTools }] : []),
-  ...toolsByCategory,
+  ...(favoriteTools.value.length > 0 ? [{ name: t('tools.categories.favorite-tools'), components: favoriteTools.value }] : []),
+  ...toolsByCategory.value,
 ]);
 </script>
 
 <template>
-  <menu-layout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
+  <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
-      <router-link to="/" class="hero-wrapper">
-        <hero-gradient class="gradient" />
+      <RouterLink to="/" class="hero-wrapper">
+        <HeroGradient class="gradient" />
         <div class="text-wrapper">
-          <div class="title">IT - TOOLS</div>
+          <div class="title">
+            GoDev.Run
+          </div>
           <div class="divider" />
-          <div class="subtitle">Handy tools for developers</div>
+          <div class="subtitle">
+            {{ $t('home.subtitle') }}
+          </div>
         </div>
-      </router-link>
+      </RouterLink>
 
       <div class="sider-content">
-        <n-space v-if="styleStore.isSmallScreen" justify="center">
-          <navbar-buttons />
-        </n-space>
+        <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
+          <locale-selector w="90%" />
 
-        <collapsible-tool-menu :tools-by-category="tools" />
+          <div flex justify-center>
+            <NavbarButtons />
+          </div>
+        </div>
+
+        <CollapsibleToolMenu :tools-by-category="tools" />
 
         <div class="footer">
           <div>
-            IT-Tools
+            GoDev.Run
 
-            <n-button
-              text
-              tag="a"
-              target="_blank"
-              rel="noopener"
-              type="primary"
-              depth="3"
-              :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`"
-            >
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/sunnydanu/help.godev.run/blob/master/CHANGELOG.md#version-${version}`">
               v{{ version }}
-            </n-button>
+            </c-link>
 
             <template v-if="commitSha && commitSha.length > 0">
               -
-              <n-button
-                text
-                tag="a"
+              <c-link
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                depth="3"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
+                :href="`https://github.com/sunnydanu/help.godev.run/blob/master/CHANGELOG.md#version-${version}`"
               >
                 {{ commitSha }}
-              </n-button>
+              </c-link>
             </template>
           </div>
           <div>
             © {{ new Date().getFullYear() }}
-            <n-button text tag="a" target="_blank" rel="noopener" type="primary" href="https://github.com/CorentinTh">
-              Corentin Thomasset
-            </n-button>
+            <c-link target="_blank" rel="noopener" href="https://github.com/sunnydanu">
+              Sunny Danu
+            </c-link>
           </div>
         </div>
       </div>
     </template>
 
     <template #content>
-      <div class="navigation">
-        <n-button
-          :size="styleStore.isSmallScreen ? 'medium' : 'large'"
+      <div flex items-center justify-center gap-2>
+        <c-button
           circle
-          quaternary
-          aria-label="Toggle menu"
+          variant="text"
+          :aria-label="$t('home.toggleMenu')"
           @click="styleStore.isMenuCollapsed = !styleStore.isMenuCollapsed"
         >
-          <n-icon size="25" :component="Menu2" />
-        </n-button>
+          <NIcon size="25" :component="Menu2" />
+        </c-button>
 
-        <router-link to="/" #="{ navigate, href }" custom>
-          <n-tooltip trigger="hover">
-            <template #trigger>
-              <n-button
-                tag="a"
-                :href="href"
-                :size="styleStore.isSmallScreen ? 'medium' : 'large'"
-                circle
-                quaternary
-                aria-label="Home"
-                @click="navigate"
-              >
-                <n-icon size="25" :component="Home2" />
-              </n-button>
-            </template>
-            Home
-          </n-tooltip>
-        </router-link>
+        <c-tooltip :tooltip="$t('home.home')" position="bottom">
+          <c-button to="/" circle variant="text" :aria-label="$t('home.home')">
+            <NIcon size="25" :component="Home2" />
+          </c-button>
+        </c-tooltip>
 
-        <search-bar />
+        <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
+          <c-button v-if="config.app.env === 'development'" to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')">
+            <icon-mdi:brush-variant text-20px />
+          </c-button>
+        </c-tooltip>
 
-        <navbar-buttons v-if="!styleStore.isSmallScreen" />
+        <command-palette />
 
-        <n-tooltip trigger="hover">
-          <template #trigger>
-            <n-button
-              round
-              type="primary"
-              tag="a"
-              href="https://www.buymeacoffee.com/cthmsst"
-              rel="noopener"
-              target="_blank"
-              class="support-button"
-              :bordered="false"
-              @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
-            >
-              Buy me a coffee
-              <n-icon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
-            </n-button>
-          </template>
-          ❤ Support IT Tools development !
-        </n-tooltip>
+        <locale-selector v-if="!styleStore.isSmallScreen" />
+
+        <div>
+          <NavbarButtons v-if="!styleStore.isSmallScreen" />
+        </div>
+
+        <c-tooltip position="bottom" :tooltip="$t('home.support')">
+          <c-button
+            round
+            href="https://www.buymeacoffee.com/sunnydanu"
+            rel="noopener"
+            target="_blank"
+            class="support-button"
+            :bordered="false"
+            @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
+          >
+            {{ $t('home.buyMeACoffee') }}
+            <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
+          </c-button>
+        </c-tooltip>
       </div>
       <slot />
     </template>
-  </menu-layout>
+  </MenuLayout>
 </template>
 
 <style lang="less" scoped>
@@ -165,8 +155,8 @@ const tools = computed<ToolCategory[]>(() => [
 .support-button {
   background: rgb(37, 99, 108);
   background: linear-gradient(48deg, rgba(37, 99, 108, 1) 0%, rgba(59, 149, 111, 1) 60%, rgba(20, 160, 88, 1) 100%);
-  color: #fff;
-  transition: all ease 0.2s;
+  color: #fff !important;
+  transition: padding ease 0.2s !important;
 
   &:hover {
     color: #fff;
@@ -223,27 +213,6 @@ const tools = computed<ToolCategory[]>(() => [
     .subtitle {
       font-size: 16px;
     }
-  }
-}
-
-// ::v-deep(.n-menu-item-content-header) {
-//   overflow: visible !important;
-//   // overflow-x: hidden !important;
-// }
-
-.navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-
-  & > *:not(:last-child) {
-    margin-right: 5px;
-  }
-
-  .search-bar {
-    // width: 100%;
-    flex-grow: 1;
   }
 }
 </style>
