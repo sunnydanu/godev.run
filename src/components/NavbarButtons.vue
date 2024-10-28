@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IconBrandGithub, IconBrandX, IconInfoCircle, IconMoon, IconSun } from '@tabler/icons-vue';
+import { BrandGithub, InfoCircle, Moon, Sun } from '@vicons/tabler';
 import { useStyleStore } from '@/stores/style.store';
 
 const styleStore = useStyleStore();
@@ -11,37 +11,24 @@ const { isDarkTheme } = toRefs(styleStore);
     <c-button
       circle
       variant="text"
-      href="https://github.com/CorentinTh/it-tools"
+      href="https://github.com/sunnydanu/help.godev.run"
       target="_blank"
       rel="noopener noreferrer"
       :aria-label="$t('home.nav.githubRepository')"
     >
-      <n-icon size="25" :component="IconBrandGithub" />
-    </c-button>
-  </c-tooltip>
-
-  <c-tooltip :tooltip="$t('home.nav.twitterX')" position="bottom">
-    <c-button
-      circle
-      variant="text"
-      href="https://x.com/ittoolsdottech"
-      rel="noopener"
-      target="_blank"
-      :aria-label="$t('home.nav.twitterXAccount')"
-    >
-      <n-icon size="25" :component="IconBrandX" />
+      <n-icon size="25" :component="BrandGithub" />
     </c-button>
   </c-tooltip>
 
   <c-tooltip :tooltip="$t('home.nav.about')" position="bottom">
     <c-button circle variant="text" to="/about" :aria-label="$t('home.nav.aboutLabel')">
-      <n-icon size="25" :component="IconInfoCircle" />
+      <n-icon size="25" :component="InfoCircle" />
     </c-button>
   </c-tooltip>
   <c-tooltip :tooltip="isDarkTheme ? $t('home.nav.lightMode') : $t('home.nav.darkMode')" position="bottom">
     <c-button circle variant="text" :aria-label="$t('home.nav.mode')" @click="() => styleStore.toggleDark()">
-      <n-icon v-if="isDarkTheme" size="25" :component="IconSun" />
-      <n-icon v-else size="25" :component="IconMoon" />
+      <n-icon v-if="isDarkTheme" size="25" :component="Sun" />
+      <n-icon v-else size="25" :component="Moon" />
     </c-button>
   </c-tooltip>
 </template>
