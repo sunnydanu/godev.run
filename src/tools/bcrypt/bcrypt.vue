@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { compareSync, hashSync } from 'bcryptjs';
+import { useCopy } from '@/composable/copy';
+
+const input = ref('');
+const saltCount = ref(10);
+const hashed = computed(() => hashSync(input.value, saltCount.value));
+const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
+
+const compareString = ref('');
+const compareHash = ref('');
+const compareMatch = computed(() => compareSync(compareString.value, compareHash.value));
+</script>
+
 <template>
   <n-card title="Hash">
     <n-form label-width="120">
@@ -16,9 +30,11 @@
       </n-form-item>
       <n-input :value="hashed" readonly style="text-align: center" />
     </n-form>
-    <br />
+    <br>
     <n-space justify="center">
-      <n-button secondary @click="copy"> Copy hash </n-button>
+      <n-button secondary @click="copy">
+        Copy hash
+      </n-button>
     </n-space>
   </n-card>
 
@@ -37,7 +53,7 @@
       <n-form-item label="Your hash: " label-placement="left">
         <n-input
           v-model:value="compareHash"
-          placeholder="Your hahs to compare..."
+          placeholder="Your hash to compare..."
           autocomplete="off"
           autocorrect="off"
           autocapitalize="off"
@@ -45,38 +61,13 @@
         />
       </n-form-item>
       <n-form-item label="Do they match ? " label-placement="left" :show-feedback="false">
-        <div class="compare-result" :class="{ positive: compareMatch }">
-          {{ compareMatch ? 'Yes' : 'No' }}
-        </div>
+        <n-tag v-if="compareMatch" :bordered="false" type="success" round>
+          Yes
+        </n-tag>
+        <n-tag v-else :bordered="false" type="error" round>
+          No
+        </n-tag>
       </n-form-item>
     </n-form>
   </n-card>
 </template>
-
-<script setup lang="ts">
-import { computed, ref } from 'vue';
-import { hashSync, compareSync } from 'bcryptjs';
-import { useCopy } from '@/composable/copy';
-import { useThemeVars } from 'naive-ui';
-
-const themeVars = useThemeVars();
-
-const input = ref('');
-const saltCount = ref(10);
-const hashed = computed(() => hashSync(input.value, saltCount.value));
-const { copy } = useCopy({ source: hashed, text: 'Hashed string copied to the clipboard' });
-
-const compareString = ref('');
-const compareHash = ref('');
-const compareMatch = computed(() => compareSync(compareString.value, compareHash.value));
-</script>
-
-<style lang="less" scoped>
-.compare-result {
-  color: v-bind('themeVars.errorColor');
-
-  &.positive {
-    color: v-bind('themeVars.successColor');
-  }
-}
-</style>

@@ -1,39 +1,9 @@
-<template>
-  <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name">
-    <n-text tag="div" depth="3" class="category-name" @click="toggleCategoryCollapse({ name })">
-      <n-icon :component="ChevronRight" :class="{ rotated: isCollapsed }" size="16" />
-
-      <span>
-        {{ name }}
-      </span>
-    </n-text>
-
-    <n-collapse-transition :show="!isCollapsed">
-      <div class="menu-wrapper">
-        <div class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
-
-        <n-menu
-          class="menu"
-          :value="(route.name as string)"
-          :collapsed-width="64"
-          :collapsed-icon-size="22"
-          :options="tools"
-          :indent="8"
-          :default-expand-all="true"
-        />
-      </div>
-    </n-collapse-transition>
-  </div>
-</template>
-
 <script setup lang="ts">
-import type { Tool, ToolCategory } from '@/tools/tools.types';
-import { ChevronRight } from '@vicons/tabler';
 import { useStorage } from '@vueuse/core';
 import { useThemeVars } from 'naive-ui';
-import { toRefs, computed, h } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import MenuIconItem from './MenuIconItem.vue';
+import type { Tool, ToolCategory } from '@/tools/tools.types';
 
 const props = withDefaults(defineProps<{ toolsByCategory?: ToolCategory[] }>(), { toolsByCategory: () => [] });
 const { toolsByCategory } = toRefs(props);
@@ -49,8 +19,8 @@ const collapsedCategories = useStorage<Record<string, boolean>>(
   {
     deep: true,
     serializer: {
-      read: (v) => (v ? JSON.parse(v) : null),
-      write: (v) => JSON.stringify(v),
+      read: v => (v ? JSON.parse(v) : null),
+      write: v => JSON.stringify(v),
     },
   },
 );
@@ -61,12 +31,12 @@ function toggleCategoryCollapse({ name }: { name: string }) {
 
 const menuOptions = computed(() =>
   toolsByCategory.value.map(({ name, components }) => ({
-    name: name,
+    name,
     isCollapsed: collapsedCategories.value[name],
-    tools: components.map((tool) => ({
+    tools: components.map(tool => ({
       label: makeLabel(tool),
       icon: makeIcon(tool),
-      key: tool.name,
+      key: tool.path,
     })),
   })),
 );
@@ -74,27 +44,37 @@ const menuOptions = computed(() =>
 const themeVars = useThemeVars();
 </script>
 
+<template>
+  <div v-for="{ name, tools, isCollapsed } of menuOptions" :key="name">
+    <div ml-6px mt-12px flex cursor-pointer items-center op-60 @click="toggleCategoryCollapse({ name })">
+      <span :class="{ 'rotate-0': isCollapsed, 'rotate-90': !isCollapsed }" text-16px lh-1 op-50 transition-transform>
+        <icon-mdi-chevron-right />
+      </span>
+
+      <span ml-8px text-13px>
+        {{ name }}
+      </span>
+    </div>
+
+    <n-collapse-transition :show="!isCollapsed">
+      <div class="menu-wrapper">
+        <div class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
+
+        <n-menu
+          class="menu"
+          :value="route.path"
+          :collapsed-width="64"
+          :collapsed-icon-size="22"
+          :options="tools"
+          :indent="8"
+          :default-expand-all="true"
+        />
+      </div>
+    </n-collapse-transition>
+  </div>
+</template>
+
 <style scoped lang="less">
-.category-name {
-  font-size: 0.93em;
-  padding: 12px 0 0px 0;
-  cursor: pointer;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  .n-icon {
-    transition: transform ease 0.5s;
-    transform: rotate(90deg);
-    margin: 0 10px 0 7px;
-    opacity: 0.5;
-
-    &.rotated {
-      transform: rotate(0deg);
-    }
-  }
-}
-
 .menu-wrapper {
   display: flex;
   flex-direction: row;

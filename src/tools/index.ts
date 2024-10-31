@@ -1,6 +1,42 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
+import { tool as argon2HashGenerator } from './argon2-hash-generator';
+import { tool as imageResizer } from './image-resizer';
+import { tool as dnsQueries } from './dns-queries';
+import { tool as jsonEditor } from './json-editor';
+import { tool as liveCode } from './live-code';
+import { tool as emailNormalizer } from './email-normalizer';
+import { tool as energyComputer } from './energy-computer';
+import { tool as peerShare } from './peer-share';
+import { tool as asciiTextDrawer } from './ascii-text-drawer';
+import { tool as textToUnicode } from './text-to-unicode';
+import { tool as safelinkDecoder } from './safelink-decoder';
+import { tool as xmlToJson } from './xml-to-json';
+import { tool as jsonToXml } from './json-to-xml';
+import { tool as regexTester } from './regex-tester';
+import { tool as regexMemo } from './regex-memo';
+import { tool as markdownToHtml } from './markdown-to-html';
+import { tool as pdfSignatureChecker } from './pdf-signature-checker';
+import { tool as numeronymGenerator } from './numeronym-generator';
+import { tool as macAddressGenerator } from './mac-address-generator';
+import { tool as textToBinary } from './text-to-binary';
+import { tool as ulidGenerator } from './ulid-generator';
+import { tool as ibanValidatorAndParser } from './iban-validator-and-parser';
+import { tool as stringObfuscator } from './string-obfuscator';
+import { tool as textDiff } from './text-diff';
+import { tool as emojiPicker } from './emoji-picker';
+import { tool as passwordStrengthAnalyser } from './password-strength-analyser';
+import { tool as yamlToToml } from './yaml-to-toml';
+import { tool as jsonToToml } from './json-to-toml';
+import { tool as tomlToYaml } from './toml-to-yaml';
+import { tool as tomlToJson } from './toml-to-json';
+import { tool as jsonToCsv } from './json-to-csv';
+import { tool as cameraRecorder } from './camera-recorder';
+import { tool as listConverter } from './list-converter';
+import { tool as phoneParserAndFormatter } from './phone-parser-and-formatter';
+import { tool as jsonDiff } from './json-diff';
+import { tool as ipv4RangeExpander } from './ipv4-range-expander';
 import { tool as httpStatusCodes } from './http-status-codes';
 import { tool as yamlToJson } from './yaml-to-json-converter';
 import { tool as jsonToYaml } from './json-to-yaml-converter';
@@ -27,6 +63,7 @@ import { tool as dateTimeConverter } from './date-time-converter';
 import { tool as deviceInformation } from './device-information';
 import { tool as cypher } from './encryption';
 import { tool as etaCalculator } from './eta-calculator';
+import { tool as percentageCalculator } from './percentage-calculator';
 import { tool as gitMemo } from './git-memo';
 import { tool as hashText } from './hash-text';
 import { tool as hmacGenerator } from './hmac-generator';
@@ -40,6 +77,7 @@ import { tool as metaTagGenerator } from './meta-tag-generator';
 import { tool as mimeTypes } from './mime-types';
 import { tool as otpCodeGeneratorAndValidator } from './otp-code-generator-and-validator';
 import { tool as qrCodeGenerator } from './qr-code-generator';
+import { tool as wifiQrCodeGenerator } from './wifi-qr-code-generator';
 import { tool as randomPortGenerator } from './random-port-generator';
 import { tool as romanNumeralConverter } from './roman-numeral-converter';
 import { tool as sqlPrettify } from './sql-prettify';
@@ -52,11 +90,26 @@ import { tool as urlEncoder } from './url-encoder';
 import { tool as urlParser } from './url-parser';
 import { tool as uuidGenerator } from './uuid-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
+import { tool as xmlFormatter } from './xml-formatter';
+import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Crypto',
-    components: [tokenGenerator, hashText, bcrypt, uuidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator],
+    components: [
+      tokenGenerator,
+      hashText,
+      bcrypt,
+      argon2HashGenerator,
+      uuidGenerator,
+      ulidGenerator,
+      cypher,
+      bip39,
+      hmacGenerator,
+      rsaKeyPairGenerator,
+      passwordStrengthAnalyser,
+      pdfSignatureChecker,
+    ],
   },
   {
     name: 'Converter',
@@ -69,13 +122,25 @@ export const toolsByCategory: ToolCategory[] = [
       colorConverter,
       caseConverter,
       textToNatoAlphabet,
+      textToBinary,
+      textToUnicode,
       yamlToJson,
+      yamlToToml,
       jsonToYaml,
+      jsonToToml,
+      listConverter,
+      tomlToJson,
+      tomlToYaml,
+      xmlToJson,
+      jsonToXml,
+      markdownToHtml,
     ],
   },
   {
     name: 'Web',
     components: [
+      liveCode,
+      peerShare,
       urlEncoder,
       htmlEntities,
       urlParser,
@@ -90,44 +155,84 @@ export const toolsByCategory: ToolCategory[] = [
       htmlWysiwygEditor,
       userAgentParser,
       httpStatusCodes,
+      jsonDiff,
+      safelinkDecoder,
     ],
   },
   {
-    name: 'Images',
-    components: [qrCodeGenerator, svgPlaceholderGenerator],
+    name: 'Images and videos',
+    components: [
+      qrCodeGenerator,
+      wifiQrCodeGenerator,
+      svgPlaceholderGenerator,
+      cameraRecorder,
+      imageResizer,
+    ],
   },
   {
     name: 'Development',
     components: [
+      jsonEditor,
       gitMemo,
       randomPortGenerator,
       crontabGenerator,
       jsonViewer,
       jsonMinify,
+      jsonToCsv,
       sqlPrettify,
       chmodCalculator,
       dockerRunToDockerComposeConverter,
+      xmlFormatter,
+      yamlViewer,
+      emailNormalizer,
+      regexTester,
+      regexMemo,
     ],
   },
   {
     name: 'Network',
-    components: [ipv4SubnetCalculator, ipv4AddressConverter, macAddressLookup, ipv6UlaGenerator],
+    components: [
+      ipv4SubnetCalculator,
+      ipv4AddressConverter,
+      ipv4RangeExpander,
+      macAddressLookup,
+      macAddressGenerator,
+      ipv6UlaGenerator,
+      dnsQueries,
+    ],
   },
   {
     name: 'Math',
-    components: [mathEvaluator, etaCalculator],
+    components: [mathEvaluator, etaCalculator, percentageCalculator],
   },
   {
     name: 'Measurement',
-    components: [chronometer, temperatureConverter, benchmarkBuilder],
+    components: [
+      chronometer,
+      temperatureConverter,
+      benchmarkBuilder,
+      energyComputer,
+    ],
   },
   {
     name: 'Text',
-    components: [loremIpsumGenerator, textStatistics],
+    components: [
+      loremIpsumGenerator,
+      textStatistics,
+      emojiPicker,
+      stringObfuscator,
+      textDiff,
+      numeronymGenerator,
+      asciiTextDrawer,
+    ],
+  },
+  {
+    name: 'Data',
+    components: [phoneParserAndFormatter, ibanValidatorAndParser],
   },
 ];
 
 export const tools = toolsByCategory.flatMap(({ components }) => components);
 export const toolsWithCategory = toolsByCategory.flatMap(({ components, name }) =>
-  components.map((tool) => ({ category: name, ...tool })),
+  components.map(tool => ({ category: name, ...tool })),
 );
