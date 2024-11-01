@@ -7,7 +7,7 @@ if ! git diff HEAD --quiet; then
 fi
 
 # Run tests and type checking
-pnpm test && pnpm typecheck
+pnpm vitest --environment jsdom --run && pnpm typecheck
 TEST_EXIT_STATUS=$?
 
 # If the tests or type checks fail, exit
