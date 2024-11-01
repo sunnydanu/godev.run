@@ -21,7 +21,7 @@ pnpm dev &
 SERVER_PID=$!
 
 # Wait for the server to start (adjust the sleep duration as needed)
-sleep 5
+sleep 10
 
 # Run Playwright tests
 pnpm test:e2e
