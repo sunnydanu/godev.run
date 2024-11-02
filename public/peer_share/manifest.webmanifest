@@ -1,0 +1,26 @@
+{
+  "name": "GoDevRun - Peer Share",
+  "short_name": "GoDevRun - Peer Share",
+  "description": "PeerShare: A secure client-side P2P connection offering features like file sharing and live clipboard.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "orientation": "portrait",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "handle_links": "auto",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
