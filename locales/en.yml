@@ -398,3 +398,6 @@ tools:
   image-resizer:
     title: Image resizer
     description: Convert the width and height of an image file, preview, and download it in a desired format (.jpg, .jpeg, .png, .bmp, .ico, .svg)
+  multi-link-downloader:
+    title: Multi link downloader
+    description: Asynchronously downloads from multiple links into a zip file while a single link downloads directly.

@@ -74,6 +74,7 @@
     "js-base64": "^3.7.6",
     "json-editor-vue": "^0.17.2",
     "json5": "^2.2.3",
+    "jszip": "^3.10.1",
     "jwt-decode": "^3.1.2",
     "libphonenumber-js": "^1.10.28",
     "livecodes": "^0.6.0",

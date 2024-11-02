@@ -7,6 +7,7 @@ import { tool as imageResizer } from './image-resizer';
 import { tool as dnsQueries } from './dns-queries';
 import { tool as jsonEditor } from './json-editor';
 import { tool as liveCode } from './live-code';
+import { tool as multiLinkDownloader } from './multi-link-downloader';
 import { tool as emailNormalizer } from './email-normalizer';
 import { tool as energyComputer } from './energy-computer';
 import { tool as peerShare } from './peer-share';
@@ -230,7 +231,11 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Data',
-    components: [phoneParserAndFormatter, ibanValidatorAndParser],
+    components: [
+      phoneParserAndFormatter,
+      ibanValidatorAndParser,
+      multiLinkDownloader,
+    ],
   },
 ];
 
