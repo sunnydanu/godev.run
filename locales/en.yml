@@ -401,3 +401,13 @@ tools:
   multi-link-downloader:
     title: Multi link downloader
     description: Asynchronously downloads from multiple links into a zip file while a single link downloads directly.
+  uuid-converter:
+    title: UUID converter
+    description: Converts a UUID with and without a hyphen to other common SQL notations and back.
+    uuid: UUID
+    uuidhexupper: HEX notation (upper)
+    uuidhexlower: HEX notation (lower)
+    uuidversion: RFC Version
+    input:
+      label: Your Input
+      placeholder: Your UUID with/without hyphen
