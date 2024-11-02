@@ -6,7 +6,7 @@ test.describe('Tool - Properties to YAML', () => {
   });
 
   test('Has correct title', async ({ page }) => {
-    await expect(page).toHaveTitle('Properties to YAML - IT Tools');
+    await expect(page).toHaveTitle('GoDev.Run - Properties to YAML');
   });
 
   test('', async ({ page }) => {
