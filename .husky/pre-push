@@ -17,14 +17,14 @@ if [ $TEST_EXIT_STATUS -ne 0 ]; then
 fi
 
 # Start the local server in the background
-pnpm dev &
+pnpm dev
 SERVER_PID=$!
 
 # Wait for the server to start (adjust the sleep duration as needed)
 sleep 10
 
 # Run Playwright tests
-pnpm test:e2e
+pnpm test:e2e:dev
 
 # Capture the exit status of the Playwright tests
 E2E_TEST_EXIT_STATUS=$?
