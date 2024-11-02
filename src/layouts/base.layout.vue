@@ -39,7 +39,7 @@ const tools = computed<ToolCategory[]>(() => [
         <HeroGradient class="gradient" />
         <div class="text-wrapper">
           <div class="title">
-            IT - TOOLS
+            GoDev.Run
           </div>
           <div class="divider" />
           <div class="subtitle">
@@ -61,9 +61,9 @@ const tools = computed<ToolCategory[]>(() => [
 
         <div class="footer">
           <div>
-            IT-Tools
+            GoDev.Run
 
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/sunnydanu/help.godev.run/blob/master/CHANGELOG.md#version-${version}`">
               v{{ version }}
             </c-link>
 
@@ -73,7 +73,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
+                :href="`https://github.com/sunnydanu/help.godev.run/blob/master/CHANGELOG.md#version-${version}`"
               >
                 {{ commitSha }}
               </c-link>
@@ -81,8 +81,8 @@ const tools = computed<ToolCategory[]>(() => [
           </div>
           <div>
             © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://github.com/CorentinTh">
-              Corentin Thomasset
+            <c-link target="_blank" rel="noopener" href="https://github.com/sunnydanu">
+              Sunny Danu
             </c-link>
           </div>
         </div>
@@ -100,13 +100,13 @@ const tools = computed<ToolCategory[]>(() => [
           <NIcon size="25" :component="Menu2" />
         </c-button>
 
-        <c-tooltip tooltip="Home" position="bottom">
+        <c-tooltip :tooltip="$t('home.home')" position="bottom">
           <c-button to="/" circle variant="text" :aria-label="$t('home.home')">
             <NIcon size="25" :component="Home2" />
           </c-button>
         </c-tooltip>
 
-        <c-tooltip tooltip="UI Lib" position="bottom">
+        <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
           <c-button v-if="config.app.env === 'development'" to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')">
             <icon-mdi:brush-variant text-20px />
           </c-button>
@@ -120,10 +120,10 @@ const tools = computed<ToolCategory[]>(() => [
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
         </div>
 
-        <c-tooltip position="bottom" tooltip="Support IT Tools development">
+        <c-tooltip position="bottom" :tooltip="$t('home.support')">
           <c-button
             round
-            href="https://www.buymeacoffee.com/cthmsst"
+            href="https://www.buymeacoffee.com/sunnydanu"
             rel="noopener"
             target="_blank"
             class="support-button"

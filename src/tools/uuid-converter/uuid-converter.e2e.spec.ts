@@ -6,10 +6,6 @@ test.describe('Tool - UUID converter', () => {
   });
 
   test('Has correct title', async ({ page }) => {
-    await expect(page).toHaveTitle('UUID converter - IT Tools');
-  });
-
-  test('', async ({ page }) => {
-
+    await expect(page).toHaveTitle('GoDev.Run - UUID converter');
   });
 });

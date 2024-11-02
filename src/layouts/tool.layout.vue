@@ -10,7 +10,7 @@ import type { Tool } from '@/tools/tools.types';
 const route = useRoute();
 
 const head = computed<HeadObject>(() => ({
-  title: `${route.meta.name} - IT Tools`,
+  title: `GoDev.Run - ${route.meta.name}`,
   meta: [
     {
       name: 'description',
@@ -40,7 +40,7 @@ const toolDescription = computed<string>(() => t(`tools.${i18nKey.value}.descrip
           </n-h1>
 
           <div>
-            <FavoriteButton :tool="{ name: route.meta.name } as Tool" />
+            <FavoriteButton :tool="{ name: route.meta.name, path: route.path } as Tool" />
           </div>
         </div>
 

@@ -1,25 +1,25 @@
 <script setup lang="ts">
 import InputCopyable from '../../components/InputCopyable.vue';
 import { UUID2HEX, getVersion, normalizeUUID } from './uuid-converter.service';
+import { translate } from '@/plugins/i18n.plugin';
 
-const { t } = useI18n();
 const input = ref('');
 
 const formats = computed(() => [
   {
-    label: t('tools.uuid-converter.uuid'),
+    label: translate('tools.uuid-converter.uuid'),
     value: normalizeUUID(input.value),
   },
   {
-    label: t('tools.uuid-converter.uuidhexupper'),
+    label: translate('tools.uuid-converter.uuidhexupper'),
     value: UUID2HEX(input.value, true),
   },
   {
-    label: t('tools.uuid-converter.uuidhexlower'),
+    label: translate('tools.uuid-converter.uuidhexlower'),
     value: UUID2HEX(input.value, false),
   },
   {
-    label: t('tools.uuid-converter.uuidversion'),
+    label: translate('tools.uuid-converter.uuidversion'),
     value: getVersion(input.value).toString(),
   },
 ]);
@@ -35,7 +35,7 @@ const inputLabelAlignmentConfig = {
   <c-card>
     <c-input-text
       v-model:value="input"
-      autofocus :label="t('tools.uuid-converter.input.label')" :placeholder="t('tools.uuid-converter.input.placeholder')" raw-text
+      autofocus :label="translate('tools.uuid-converter.input.label')" :placeholder="translate('tools.uuid-converter.input.placeholder')" raw-text
       v-bind="inputLabelAlignmentConfig"
     />
 

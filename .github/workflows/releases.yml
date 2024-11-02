@@ -39,13 +39,13 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            corentinth/it-tools:latest
-            corentinth/it-tools:${{ env.RELEASE_VERSION }}
-            ghcr.io/corentinth/it-tools:latest
-            ghcr.io/corentinth/it-tools:${{ env.RELEASE_VERSION}}
+            sunnydanu/godev-run:latest
+            sunnydanu/godev-run:${{ env.RELEASE_VERSION }}
+            ghcr.io/sunnydanu/godev-run:latest
+            ghcr.io/sunnydanu/godev-run:${{ env.RELEASE_VERSION}}
 
   github-release:
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -71,7 +71,7 @@ jobs:
         run: pnpm build
 
       - name: Zip the app
-        run: zip -r it-tools-${{ env.RELEASE_VERSION }}.zip dist/*
+        run: zip -r godev-run-${{ env.RELEASE_VERSION }}.zip dist/*
 
       - name: Get changelog
         id: changelog
@@ -85,7 +85,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: it-tools-${{ env.RELEASE_VERSION }}.zip
+          files: godev-run-${{ env.RELEASE_VERSION }}.zip
           tag_name: v${{ env.RELEASE_VERSION }}
           draft: true
           prerelease: false
@@ -93,11 +93,11 @@ jobs:
             ## Docker images
 
             - Docker Hub
-              - `corentinth/it-tools:latest`
-              - `corentinth/it-tools:${{ env.RELEASE_VERSION }}`
+              - `sunnydanu/godev-run:latest`
+              - `sunnydanu/godev-run:${{ env.RELEASE_VERSION }}`
             - GitHub Container Registry
-              - `ghcr.io/corentinth/it-tools:latest`
-              - `ghcr.io/corentinth/it-tools:${{ env.RELEASE_VERSION}}`
+              - `ghcr.io/sunnydanu/godev-run:latest`
+              - `ghcr.io/sunnydanu/godev-run:${{ env.RELEASE_VERSION}}`
 
             ## Changelog
 
