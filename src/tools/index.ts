@@ -1,6 +1,7 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
+import { tool as aiPromptSplitter } from './ai-prompt-splitter';
 import { tool as argon2HashGenerator } from './argon2-hash-generator';
 import { tool as imageResizer } from './image-resizer';
 import { tool as dnsQueries } from './dns-queries';
@@ -224,6 +225,7 @@ export const toolsByCategory: ToolCategory[] = [
       textDiff,
       numeronymGenerator,
       asciiTextDrawer,
+      aiPromptSplitter,
     ],
   },
   {

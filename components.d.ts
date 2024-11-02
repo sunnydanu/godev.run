@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     '404.page': typeof import('./src/pages/404.page.vue')['default']
     About: typeof import('./src/pages/About.vue')['default']
+    AiPromptSplitter: typeof import('./src/tools/ai-prompt-splitter/ai-prompt-splitter.vue')['default']
     App: typeof import('./src/App.vue')['default']
     Argon2HashGenerator: typeof import('./src/tools/argon2-hash-generator/argon2-hash-generator.vue')['default']
     AsciiTextDrawer: typeof import('./src/tools/ascii-text-drawer/ascii-text-drawer.vue')['default']
