@@ -1,16 +1,20 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
+import { tool as aiPromptSplitter } from './ai-prompt-splitter';
 import { tool as argon2HashGenerator } from './argon2-hash-generator';
 import { tool as imageResizer } from './image-resizer';
 import { tool as dnsQueries } from './dns-queries';
 import { tool as jsonEditor } from './json-editor';
 import { tool as liveCode } from './live-code';
+import { tool as multiLinkDownloader } from './multi-link-downloader';
 import { tool as emailNormalizer } from './email-normalizer';
 import { tool as energyComputer } from './energy-computer';
 import { tool as peerShare } from './peer-share';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as textToUnicode } from './text-to-unicode';
+import { tool as gzipConverter } from './gzip-converter';
+import { tool as ocrImage } from './ocr-image';
 import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as xmlToJson } from './xml-to-json';
 import { tool as jsonToXml } from './json-to-xml';
@@ -134,6 +138,7 @@ export const toolsByCategory: ToolCategory[] = [
       xmlToJson,
       jsonToXml,
       markdownToHtml,
+      gzipConverter,
     ],
   },
   {
@@ -161,13 +166,7 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Images and videos',
-    components: [
-      qrCodeGenerator,
-      wifiQrCodeGenerator,
-      svgPlaceholderGenerator,
-      cameraRecorder,
-      imageResizer,
-    ],
+    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder, imageResizer, ocrImage],
   },
   {
     name: 'Development',
@@ -207,12 +206,7 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Measurement',
-    components: [
-      chronometer,
-      temperatureConverter,
-      benchmarkBuilder,
-      energyComputer,
-    ],
+    components: [chronometer, temperatureConverter, benchmarkBuilder, energyComputer],
   },
   {
     name: 'Text',
@@ -224,11 +218,12 @@ export const toolsByCategory: ToolCategory[] = [
       textDiff,
       numeronymGenerator,
       asciiTextDrawer,
+      aiPromptSplitter,
     ],
   },
   {
     name: 'Data',
-    components: [phoneParserAndFormatter, ibanValidatorAndParser],
+    components: [phoneParserAndFormatter, ibanValidatorAndParser, multiLinkDownloader],
   },
 ];
 
