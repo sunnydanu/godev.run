@@ -92,6 +92,9 @@ importers:
       emojilib:
         specifier: ^3.0.10
         version: 3.0.10
+      fflate:
+        specifier: ^0.8.2
+        version: 0.8.2
       figlet:
         specifier: ^1.7.0
         version: 1.7.0
@@ -114,7 +117,7 @@ importers:
         specifier: ^4.3.3
         version: 4.3.3
       js-base64:
-        specifier: ^3.7.6
+        specifier: ^3.7.7
         version: 3.7.7
       json-editor-vue:
         specifier: ^0.17.2
@@ -3274,6 +3277,9 @@ packages:
   fetch-blob@3.2.0:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
+
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
 
   figlet@1.7.0:
     resolution: {integrity: sha512-gO8l3wvqo0V7wEFLXPbkX83b7MVjRrk1oRLfYlZXol8nEpb/ON9pcKLI4qpBv5YtOTfrINtqb7b40iYY2FTWFg==}
@@ -9294,6 +9300,8 @@ snapshots:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
+
+  fflate@0.8.2: {}
 
   figlet@1.7.0: {}
 

@@ -13,6 +13,7 @@ import { tool as energyComputer } from './energy-computer';
 import { tool as peerShare } from './peer-share';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as textToUnicode } from './text-to-unicode';
+import { tool as gzipConverter } from './gzip-converter';
 import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as xmlToJson } from './xml-to-json';
 import { tool as jsonToXml } from './json-to-xml';
@@ -136,6 +137,7 @@ export const toolsByCategory: ToolCategory[] = [
       xmlToJson,
       jsonToXml,
       markdownToHtml,
+      gzipConverter,
     ],
   },
   {
