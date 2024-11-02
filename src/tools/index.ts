@@ -23,6 +23,7 @@ import { tool as regexMemo } from './regex-memo';
 import { tool as markdownToHtml } from './markdown-to-html';
 import { tool as propertiesToYaml } from './properties-to-yaml';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
+import { tool as uuidConverter } from './uuid-converter';
 import { tool as numeronymGenerator } from './numeronym-generator';
 import { tool as macAddressGenerator } from './mac-address-generator';
 import { tool as textToBinary } from './text-to-binary';
@@ -140,6 +141,7 @@ export const toolsByCategory: ToolCategory[] = [
       jsonToXml,
       markdownToHtml,
       gzipConverter,
+      uuidConverter,
       propertiesToYaml,
     ],
   },
