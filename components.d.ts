@@ -210,6 +210,7 @@ declare module '@vue/runtime-core' {
     RegexMemo: typeof import('./src/tools/regex-memo/regex-memo.vue')['default']
     'RegexMemo.content': typeof import('./src/tools/regex-memo/regex-memo.content.md')['default']
     RegexTester: typeof import('./src/tools/regex-tester/regex-tester.vue')['default']
+    RemoveExif: typeof import('./src/tools/remove-exif/remove-exif.vue')['default']
     ResultRow: typeof import('./src/tools/ipv4-range-expander/result-row.vue')['default']
     RomanNumeralConverter: typeof import('./src/tools/roman-numeral-converter/roman-numeral-converter.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
