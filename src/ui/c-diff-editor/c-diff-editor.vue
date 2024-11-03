@@ -8,7 +8,7 @@ const { options } = toRefs(props);
 const editorContainer = ref<HTMLElement | null>(null);
 let editor: monaco.editor.IStandaloneDiffEditor | null = null;
 
-monaco.editor.defineTheme('it-tools-dark', {
+monaco.editor.defineTheme('godev-run-dark', {
   base: 'vs-dark',
   inherit: true,
   rules: [],
@@ -17,7 +17,7 @@ monaco.editor.defineTheme('it-tools-dark', {
   },
 });
 
-monaco.editor.defineTheme('it-tools-light', {
+monaco.editor.defineTheme('godev-run-light', {
   base: 'vs',
   inherit: true,
   rules: [],
@@ -30,7 +30,7 @@ const styleStore = useStyleStore();
 
 watch(
   () => styleStore.isDarkTheme,
-  isDarkTheme => monaco.editor.setTheme(isDarkTheme ? 'it-tools-dark' : 'it-tools-light'),
+  isDarkTheme => monaco.editor.setTheme(isDarkTheme ? 'godev-run-dark' : 'godev-run-light'),
   { immediate: true },
 );
 
