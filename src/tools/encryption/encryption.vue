@@ -1,18 +1,37 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue';
 import { AES, RC4, Rabbit, TripleDES, enc } from 'crypto-js';
 import { computedCatch } from '@/composable/computed/catchedComputed';
 
 const algos = { AES, TripleDES, Rabbit, RC4 };
 
-const cypherInput = ref('Lorem ipsum dolor sit amet');
+const cypherInput = ref('Hello World!');
 const cypherAlgo = ref<keyof typeof algos>('AES');
-const cypherSecret = ref('my secret key');
-const cypherOutput = computed(() => algos[cypherAlgo.value].encrypt(cypherInput.value, cypherSecret.value).toString());
+const cypherSecret = ref('16bit secret key');
+const cypherInitializationVector = ref('1234567812345678');
 
-const decryptInput = ref('U2FsdGVkX1/EC3+6P5dbbkZ3e1kQ5o2yzuU0NHTjmrKnLBEwreV489Kr0DIB+uBs');
+const cypherOutput = computed(() => {
+  let cfg = {};
+
+  if (cypherAlgo.value === 'AES' || cypherAlgo.value === 'TripleDES') {
+    cfg = { iv: enc.Utf8.parse(cypherInitializationVector.value) };
+  }
+  return algos[cypherAlgo.value].encrypt(cypherInput.value, enc.Utf8.parse(cypherSecret.value), cfg).toString();
+});
+
+const decryptInput = ref('DX+W8WBHbt08XoJNV8bcoQ==');
 const decryptAlgo = ref<keyof typeof algos>('AES');
-const decryptSecret = ref('my secret key');
-const [decryptOutput, decryptError] = computedCatch(() => algos[decryptAlgo.value].decrypt(decryptInput.value, decryptSecret.value).toString(enc.Utf8), {
+const decryptSecret = ref('16bit secret key');
+const decryptInitializationVector = ref('1234567812345678');
+const [decryptOutput, decryptError] = computedCatch(() => {
+  let cfg = {};
+  if (decryptAlgo.value === 'AES' || decryptAlgo.value === 'TripleDES') {
+    cfg = { iv: enc.Utf8.parse(decryptInitializationVector.value) };
+  }
+  return algos[decryptAlgo.value]
+    .decrypt(decryptInput.value, enc.Utf8.parse(decryptSecret.value), cfg)
+    .toString(enc.Utf8);
+}, {
   defaultValue: '',
   defaultErrorMessage: 'Unable to decrypt your text',
 });
@@ -26,7 +45,11 @@ const [decryptOutput, decryptError] = computedCatch(() => algos[decryptAlgo.valu
         label="Your text:"
         placeholder="The string to cypher"
         rows="4"
-        multiline raw-text monospace autosize flex-1
+        multiline
+        raw-text
+        monospace
+        autosize
+        flex-1
       />
       <div flex flex-1 flex-col gap-2>
         <c-input-text v-model:value="cypherSecret" label="Your secret key:" clearable raw-text />
@@ -43,7 +66,11 @@ const [decryptOutput, decryptError] = computedCatch(() => algos[decryptAlgo.valu
       :value="cypherOutput"
       rows="3"
       placeholder="Your string hash"
-      multiline monospace readonly autosize mt-5
+      multiline
+      monospace
+      readonly
+      autosize
+      mt-5
     />
   </c-card>
   <c-card title="Decrypt">
@@ -53,7 +80,11 @@ const [decryptOutput, decryptError] = computedCatch(() => algos[decryptAlgo.valu
         label="Your encrypted text:"
         placeholder="The string to cypher"
         rows="4"
-        multiline raw-text monospace autosize flex-1
+        multiline
+        raw-text
+        monospace
+        autosize
+        flex-1
       />
       <div flex flex-1 flex-col gap-2>
         <c-input-text v-model:value="decryptSecret" label="Your secret key:" clearable raw-text />
@@ -74,7 +105,11 @@ const [decryptOutput, decryptError] = computedCatch(() => algos[decryptAlgo.valu
       :value="decryptOutput"
       placeholder="Your string hash"
       rows="3"
-      multiline monospace readonly autosize mt-5
+      multiline
+      monospace
+      readonly
+      autosize
+      mt-5
     />
   </c-card>
 </template>

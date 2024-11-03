@@ -1,20 +1,20 @@
-import { URL, fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
+import { URL, fileURLToPath } from 'node:url';
 
-import { defineConfig } from 'vite';
+import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import Unocss from 'unocss/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import Icons from 'unplugin-icons/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
+import { defineConfig } from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 import markdown from 'vite-plugin-vue-markdown';
 import svgLoader from 'vite-svg-loader';
-import { VitePWA } from 'vite-plugin-pwa';
-import AutoImport from 'unplugin-auto-import/vite';
-import Components from 'unplugin-vue-components/vite';
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
-import Unocss from 'unocss/vite';
 import { configDefaults } from 'vitest/config';
-import Icons from 'unplugin-icons/vite';
-import IconsResolver from 'unplugin-icons/resolver';
-import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 
 const baseUrl = process.env.BASE_URL ?? '/';
 
@@ -23,9 +23,13 @@ export default defineConfig({
   plugins: [
     VueI18n({
       runtimeOnly: true,
+      jitCompilation: true,
       compositionOnly: true,
       fullInstall: true,
-      include: [resolve(__dirname, 'locales/**')],
+      strictMessage: false,
+      include: [
+        resolve(__dirname, 'locales/**'),
+      ],
     }),
     AutoImport({
       imports: [
@@ -51,9 +55,13 @@ export default defineConfig({
     svgLoader(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        // Increase the maximum file size to cache
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
+      },
       strategies: 'generateSW',
       manifest: {
-        name: 'IT Tools',
+        name: 'GoDev.Run',
         description: 'Aggregated set of useful tools for developers.',
         display: 'standalone',
         lang: 'fr-FR',
@@ -108,5 +116,13 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+  },
+  optimizeDeps: {
+    include: ['pdfjs-dist'], // optionally specify dependency name
+    esbuildOptions: {
+      supported: {
+        'top-level-await': true,
+      },
+    },
   },
 });
