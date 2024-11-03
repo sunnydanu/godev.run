@@ -143,6 +143,7 @@ declare module '@vue/runtime-core' {
     LiveCode: typeof import('./src/tools/live-code/live-code.vue')['default']
     LocaleSelector: typeof import('./src/modules/i18n/components/locale-selector.vue')['default']
     LoremIpsumGenerator: typeof import('./src/tools/lorem-ipsum-generator/lorem-ipsum-generator.vue')['default']
+    MacAddressConverter: typeof import('./src/tools/mac-address-converter/mac-address-converter.vue')['default']
     MacAddressGenerator: typeof import('./src/tools/mac-address-generator/mac-address-generator.vue')['default']
     MacAddressLookup: typeof import('./src/tools/mac-address-lookup/mac-address-lookup.vue')['default']
     MarkdownToHtml: typeof import('./src/tools/markdown-to-html/markdown-to-html.vue')['default']
