@@ -78,7 +78,7 @@ importers:
         specifier: ^1.6.12
         version: 1.6.12
       composeverter:
-        specifier: ^1.6.2
+        specifier: ^1.7.2
         version: 1.7.2
       country-code-lookup:
         specifier: ^0.1.0
