@@ -13,18 +13,8 @@ const isNotSameVersion = ref<boolean>(false);
 
 const result = computed(() => {
   try {
-    isNotSameVersion.value = isIPv6(rawEndAddress.value) !== isIPv6(rawStartAddress.value);
-    isReversed.value = false;
-    if (isNotSameVersion.value) {
-      return [];
-    }
-
     const startIp = parse(rawStartAddress.value).start;
     const endIp = parse(rawEndAddress.value).end;
-    isReversed.value = startIp > endIp;
-    if (isReversed.value) {
-      return [];
-    }
 
     const version = isIPv6(rawStartAddress.value) ? 6 : 4;
     const ipRangeLength = endIp - startIp + 1n;
@@ -39,6 +29,17 @@ const result = computed(() => {
   catch (e) {
     return [];
   }
+});
+
+// Watch for changes in rawStartAddress and rawEndAddress
+watch([rawStartAddress, rawEndAddress], () => {
+  isNotSameVersion.value = isIPv6(rawEndAddress.value) !== isIPv6(rawStartAddress.value);
+  isReversed.value = false;
+
+  const startIp = parse(rawStartAddress.value).start;
+  const endIp = parse(rawEndAddress.value).end;
+
+  isReversed.value = startIp > endIp;
 });
 
 const startIpValidation = useValidation({
