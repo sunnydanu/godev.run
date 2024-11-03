@@ -103,6 +103,7 @@ import { tool as dockerComposeToDockerRunConverter } from './docker-compose-to-d
 import { tool as dockerComposeConverter } from './docker-compose-converter';
 import { tool as imageExifReader } from './image-exif-reader';
 import { tool as yamlViewer } from './yaml-viewer';
+import { tool as ipRangeToCidr } from './ip-range-to-cidr';
 
 export const toolsByCategory: ToolCategory[] = [
   {
@@ -210,15 +211,23 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Network',
     components: [
+
       ipv4SubnetCalculator,
+
       ipv4AddressConverter,
+
       ipv4RangeExpander,
+
+      ipRangeToCidr,
       macAddressLookup,
+
       macAddressGenerator,
       macAddressConverter,
+
       ipv6UlaGenerator,
       dnsQueries,
       ipGeoLocation,
+
     ],
   },
   {

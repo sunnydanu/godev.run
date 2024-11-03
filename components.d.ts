@@ -125,6 +125,7 @@ declare module '@vue/runtime-core' {
     InputCopyable: typeof import('./src/components/InputCopyable.vue')['default']
     IntegerBaseConverter: typeof import('./src/tools/integer-base-converter/integer-base-converter.vue')['default']
     IpGeoLocation: typeof import('./src/tools/ip-geo-location/ip-geo-location.vue')['default']
+    IpRangeToCidr: typeof import('./src/tools/ip-range-to-cidr/ip-range-to-cidr.vue')['default']
     Ipv4AddressConverter: typeof import('./src/tools/ipv4-address-converter/ipv4-address-converter.vue')['default']
     Ipv4RangeExpander: typeof import('./src/tools/ipv4-range-expander/ipv4-range-expander.vue')['default']
     Ipv4SubnetCalculator: typeof import('./src/tools/ipv4-subnet-calculator/ipv4-subnet-calculator.vue')['default']
