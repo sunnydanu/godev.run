@@ -7,6 +7,7 @@ import sqlHljs from 'highlight.js/lib/languages/sql';
 import xmlHljs from 'highlight.js/lib/languages/xml';
 import yamlHljs from 'highlight.js/lib/languages/yaml';
 import iniHljs from 'highlight.js/lib/languages/ini';
+import markdownHljs from 'highlight.js/lib/languages/markdown';
 import bashHljs from 'highlight.js/lib/languages/bash';
 import { useCopy } from '@/composable/copy';
 
@@ -17,6 +18,7 @@ const props = withDefaults(
     language?: string
     copyPlacement?: 'top-right' | 'bottom-right' | 'outside' | 'none'
     copyMessage?: string
+    wordWrap?: boolean
   }>(),
   {
     followHeightOf: null,
@@ -31,6 +33,7 @@ hljs.registerLanguage('html', xmlHljs);
 hljs.registerLanguage('xml', xmlHljs);
 hljs.registerLanguage('yaml', yamlHljs);
 hljs.registerLanguage('toml', iniHljs);
+hljs.registerLanguage('markdown', markdownHljs);
 hljs.registerLanguage('bash', bashHljs);
 
 const { value, language, followHeightOf, copyPlacement, copyMessage } = toRefs(props);
@@ -49,7 +52,7 @@ const tooltipText = computed(() => isJustCopied.value ? 'Copied!' : copyMessage.
         :style="height ? `min-height: ${height - 40 /* card padding */ + 10 /* negative margin compensation */}px` : ''"
       >
         <n-config-provider :hljs="hljs">
-          <n-code :code="value" :language="language" :trim="false" data-test-id="area-content" />
+          <n-code :code="value" :language="language" :word-wrap="wordWrap" :trim="false" data-test-id="area-content" />
         </n-config-provider>
       </n-scrollbar>
       <div

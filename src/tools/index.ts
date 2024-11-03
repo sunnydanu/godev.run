@@ -1,12 +1,29 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
-
+import { tool as aiPromptSplitter } from './ai-prompt-splitter';
+import { tool as argon2HashGenerator } from './argon2-hash-generator';
+import { tool as imageResizer } from './image-resizer';
+import { tool as dnsQueries } from './dns-queries';
+import { tool as jsonEditor } from './json-editor';
+import { tool as liveCode } from './live-code';
+import { tool as multiLinkDownloader } from './multi-link-downloader';
+import { tool as emailNormalizer } from './email-normalizer';
+import { tool as energyComputer } from './energy-computer';
+import { tool as peerShare } from './peer-share';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
-
 import { tool as textToUnicode } from './text-to-unicode';
+import { tool as gzipConverter } from './gzip-converter';
+import { tool as ocrImage } from './ocr-image';
 import { tool as safelinkDecoder } from './safelink-decoder';
+import { tool as xmlToJson } from './xml-to-json';
+import { tool as jsonToXml } from './json-to-xml';
+import { tool as regexTester } from './regex-tester';
+import { tool as regexMemo } from './regex-memo';
+import { tool as markdownToHtml } from './markdown-to-html';
+import { tool as propertiesToYaml } from './properties-to-yaml';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
+import { tool as uuidConverter } from './uuid-converter';
 import { tool as numeronymGenerator } from './numeronym-generator';
 import { tool as macAddressGenerator } from './mac-address-generator';
 import { tool as textToBinary } from './text-to-binary';
@@ -86,7 +103,20 @@ import { tool as yamlViewer } from './yaml-viewer';
 export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Crypto',
-    components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
+    components: [
+      tokenGenerator,
+      hashText,
+      bcrypt,
+      argon2HashGenerator,
+      uuidGenerator,
+      ulidGenerator,
+      cypher,
+      bip39,
+      hmacGenerator,
+      rsaKeyPairGenerator,
+      passwordStrengthAnalyser,
+      pdfSignatureChecker,
+    ],
   },
   {
     name: 'Converter',
@@ -108,11 +138,19 @@ export const toolsByCategory: ToolCategory[] = [
       listConverter,
       tomlToJson,
       tomlToYaml,
+      xmlToJson,
+      jsonToXml,
+      markdownToHtml,
+      gzipConverter,
+      uuidConverter,
+      propertiesToYaml,
     ],
   },
   {
     name: 'Web',
     components: [
+      liveCode,
+      peerShare,
       urlEncoder,
       htmlEntities,
       urlParser,
@@ -133,11 +171,12 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Images and videos',
-    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder],
+    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder, imageResizer, ocrImage],
   },
   {
     name: 'Development',
     components: [
+      jsonEditor,
       gitMemo,
       randomPortGenerator,
       crontabGenerator,
@@ -150,11 +189,22 @@ export const toolsByCategory: ToolCategory[] = [
       dockerComposeToDockerRunConverter,
       xmlFormatter,
       yamlViewer,
+      emailNormalizer,
+      regexTester,
+      regexMemo,
     ],
   },
   {
     name: 'Network',
-    components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
+    components: [
+      ipv4SubnetCalculator,
+      ipv4AddressConverter,
+      ipv4RangeExpander,
+      macAddressLookup,
+      macAddressGenerator,
+      ipv6UlaGenerator,
+      dnsQueries,
+    ],
   },
   {
     name: 'Math',
@@ -162,7 +212,7 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Measurement',
-    components: [chronometer, temperatureConverter, benchmarkBuilder],
+    components: [chronometer, temperatureConverter, benchmarkBuilder, energyComputer],
   },
   {
     name: 'Text',
@@ -174,11 +224,12 @@ export const toolsByCategory: ToolCategory[] = [
       textDiff,
       numeronymGenerator,
       asciiTextDrawer,
+      aiPromptSplitter,
     ],
   },
   {
     name: 'Data',
-    components: [phoneParserAndFormatter, ibanValidatorAndParser],
+    components: [phoneParserAndFormatter, ibanValidatorAndParser, multiLinkDownloader],
   },
 ];
 
