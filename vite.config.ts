@@ -55,9 +55,13 @@ export default defineConfig({
     svgLoader(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        // Increase the maximum file size to cache
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
+      },
       strategies: 'generateSW',
       manifest: {
-        name: 'IT Tools',
+        name: 'GoDev.Run',
         description: 'Aggregated set of useful tools for developers.',
         display: 'standalone',
         lang: 'fr-FR',
@@ -112,5 +116,13 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+  },
+  optimizeDeps: {
+    include: ['pdfjs-dist'], // optionally specify dependency name
+    esbuildOptions: {
+      supported: {
+        'top-level-await': true,
+      },
+    },
   },
 });
