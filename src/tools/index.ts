@@ -18,6 +18,7 @@ import { tool as gzipConverter } from './gzip-converter';
 import { tool as ocrImage } from './ocr-image';
 import { tool as ipGeoLocation } from './ip-geo-location';
 import { tool as safelinkDecoder } from './safelink-decoder';
+import { tool as removeExif } from './remove-exif';
 import { tool as xmlToJson } from './xml-to-json';
 import { tool as jsonToXml } from './json-to-xml';
 import { tool as regexTester } from './regex-tester';
@@ -186,6 +187,7 @@ export const toolsByCategory: ToolCategory[] = [
       imageResizer,
       ocrImage,
       imageExifReader,
+      removeExif,
     ],
   },
   {
