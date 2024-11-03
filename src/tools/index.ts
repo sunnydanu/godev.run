@@ -99,6 +99,7 @@ import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as dockerComposeToDockerRunConverter } from './docker-compose-to-docker-run-converter';
 import { tool as dockerComposeConverter } from './docker-compose-converter';
+import { tool as imageExifReader } from './image-exif-reader';
 import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
@@ -172,7 +173,13 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Images and videos',
-    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder, imageResizer, ocrImage],
+    components: [
+      qrCodeGenerator,
+      wifiQrCodeGenerator,
+      svgPlaceholderGenerator,
+      cameraRecorder, imageResizer, ocrImage,
+      imageExifReader,
+    ],
   },
   {
     name: 'Development',

@@ -104,6 +104,9 @@ importers:
       emojilib:
         specifier: ^3.0.10
         version: 3.0.10
+      exifreader:
+        specifier: ^4.20.0
+        version: 4.25.0
       fflate:
         specifier: ^0.8.2
         version: 0.8.2
@@ -128,6 +131,9 @@ importers:
       ibantools:
         specifier: ^4.3.3
         version: 4.3.3
+      jpeg-quality-estimator:
+        specifier: ^1.0.1
+        version: 1.0.1
       js-base64:
         specifier: ^3.7.7
         version: 3.7.7
@@ -2407,6 +2413,10 @@ packages:
   '@vueuse/shared@11.2.0':
     resolution: {integrity: sha512-VxFjie0EanOudYSgMErxXfq6fo8vhr5ICI+BuE3I9FnX7ePllEsVrRQ7O6Q1TLgApeLuPKcHQxAXpP+KnlrJsg==}
 
+  '@xmldom/xmldom@0.9.5':
+    resolution: {integrity: sha512-6g1EwSs8cr8JhP1iBxzyVAWM6BIDvx9Y3FZRIQiMDzgG43Pxi8YkWOZ0nQj2NHgNzgXDZbJewFx/n+YAvMZrfg==}
+    engines: {node: '>=14.6'}
+
   '@zhead/schema@1.0.0-beta.13':
     resolution: {integrity: sha512-P1A1vRGFBhITco8Iw4/hvnDYoE/SoVrd71dW1pBFdXJb3vP+pBtoOuhbEKy0ROJGOyzQuqvFibcwzyLlWMqNiQ==}
 
@@ -3336,6 +3346,9 @@ packages:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
 
+  exifreader@4.25.0:
+    resolution: {integrity: sha512-lPyPXWTUuYgoKdKf3rw2EDoE9Zl7xHoy/ehPNeQ4gFVNLzfLyNMP4oEI+sP0/Czp5r/2i7cFhqg5MHsl4FYtyw==}
+
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
     engines: {node: '>=0.10.0'}
@@ -3925,6 +3938,9 @@ packages:
   jmespath@0.16.0:
     resolution: {integrity: sha512-9FzQjJ7MATs1tSpnco1K6ayiYE3figslrXA72G2HQ/n76RzvYlofyi5QM+iX4YRs/pu3yzxlVQSST23+dMDknw==}
     engines: {node: '>= 0.6.0'}
+
+  jpeg-quality-estimator@1.0.1:
+    resolution: {integrity: sha512-Znaq+msIqs8Gmhg9JSdDjxUAZMOwYXWIURrfluimn5u2yJ4QAEDhf0tnTMkv3ikcHJoJysG5ewxfbqUXyw/Djg==}
 
   js-base64@3.7.7:
     resolution: {integrity: sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==}
@@ -8488,6 +8504,9 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@xmldom/xmldom@0.9.5':
+    optional: true
+
   '@zhead/schema@1.0.0-beta.13': {}
 
   abab@2.0.6: {}
@@ -9555,6 +9574,10 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
 
+  exifreader@4.25.0:
+    optionalDependencies:
+      '@xmldom/xmldom': 0.9.5
+
   extend-shallow@2.0.1:
     dependencies:
       is-extendable: 0.1.1
@@ -10142,6 +10165,8 @@ snapshots:
   jiti@1.21.0: {}
 
   jmespath@0.16.0: {}
+
+  jpeg-quality-estimator@1.0.1: {}
 
   js-base64@3.7.7: {}
 
