@@ -98,6 +98,7 @@ import { tool as uuidGenerator } from './uuid-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as dockerComposeToDockerRunConverter } from './docker-compose-to-docker-run-converter';
+import { tool as dockerComposeConverter } from './docker-compose-converter';
 import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
@@ -187,6 +188,7 @@ export const toolsByCategory: ToolCategory[] = [
       chmodCalculator,
       dockerRunToDockerComposeConverter,
       dockerComposeToDockerRunConverter,
+      dockerComposeConverter,
       xmlFormatter,
       yamlViewer,
       emailNormalizer,
