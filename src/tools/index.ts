@@ -24,6 +24,7 @@ import { tool as regexTester } from './regex-tester';
 import { tool as regexMemo } from './regex-memo';
 import { tool as markdownToHtml } from './markdown-to-html';
 import { tool as propertiesToYaml } from './properties-to-yaml';
+import { tool as apiTester } from './api-tester';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
 import { tool as uuidConverter } from './uuid-converter';
 import { tool as numeronymGenerator } from './numeronym-generator';
@@ -172,6 +173,7 @@ export const toolsByCategory: ToolCategory[] = [
       httpStatusCodes,
       jsonDiff,
       safelinkDecoder,
+      apiTester,
     ],
   },
   {
