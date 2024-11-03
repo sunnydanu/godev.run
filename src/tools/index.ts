@@ -16,6 +16,7 @@ import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as textToUnicode } from './text-to-unicode';
 import { tool as gzipConverter } from './gzip-converter';
 import { tool as ocrImage } from './ocr-image';
+import { tool as ipGeoLocation } from './ip-geo-location';
 import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as xmlToJson } from './xml-to-json';
 import { tool as jsonToXml } from './json-to-xml';
@@ -178,7 +179,9 @@ export const toolsByCategory: ToolCategory[] = [
       qrCodeGenerator,
       wifiQrCodeGenerator,
       svgPlaceholderGenerator,
-      cameraRecorder, imageResizer, ocrImage,
+      cameraRecorder,
+      imageResizer,
+      ocrImage,
       imageExifReader,
     ],
   },
@@ -215,6 +218,7 @@ export const toolsByCategory: ToolCategory[] = [
       macAddressConverter,
       ipv6UlaGenerator,
       dnsQueries,
+      ipGeoLocation,
     ],
   },
   {
