@@ -161,6 +161,9 @@ importers:
       ibantools:
         specifier: ^4.3.3
         version: 4.3.3
+      image-in-browser:
+        specifier: ^3.2.0
+        version: 3.2.1
       ip-address:
         specifier: ^9.0.5
         version: 9.0.5
@@ -257,6 +260,9 @@ importers:
       regex:
         specifier: ^4.3.3
         version: 4.4.0
+      roboto-base64:
+        specifier: ^0.1.2
+        version: 0.1.2
       shiki:
         specifier: ^1.22.0
         version: 1.22.2
@@ -266,6 +272,9 @@ importers:
       svg-to-url:
         specifier: ^4.0.0
         version: 4.0.0
+      svg2png-wasm:
+        specifier: ^1.4.1
+        version: 1.4.1
       tesseract.js:
         specifier: ^5.0.4
         version: 5.1.1
@@ -314,6 +323,9 @@ importers:
       webcrack:
         specifier: ^2.13.0
         version: 2.14.1
+      webp-converter-browser:
+        specifier: ^1.0.4
+        version: 1.0.4
       xml-formatter:
         specifier: ^3.3.2
         version: 3.3.2
@@ -4245,6 +4257,9 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
 
+  image-in-browser@3.2.1:
+    resolution: {integrity: sha512-QIhRnkz7ikwtu+U5Q2IkyUeC+7MtiIg0xATF4i72/hxaWjqOPm+VurD7ekCv+dwREmf19nwCurDDeHDayoIgZw==}
+
   image-size@0.5.5:
     resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
@@ -5679,6 +5694,9 @@ packages:
   ripemd160@2.0.2:
     resolution: {integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==}
 
+  roboto-base64@0.1.2:
+    resolution: {integrity: sha512-vXOGVIresupkks/WVNy4upNA4OorZx6XbHJt5ZQaat1tHBdJxui3oI101n9XV9Yg6HWIQKeAGnQbJJaUa8mfvA==}
+
   rollup-plugin-terser@7.0.2:
     resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
     deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
@@ -6013,6 +6031,9 @@ packages:
     resolution: {integrity: sha512-F7TJJGyfHHbVj1DD9Go6T8aHOcr84H/imr1bjaJII97Ni+uqKfABKaiR3BPrA/PFlNRTuB5Psjii7vmiuM970w==}
     engines: {node: '>=18'}
     hasBin: true
+
+  svg2png-wasm@1.4.1:
+    resolution: {integrity: sha512-ZFy1NtwZVAsslaTQoI+/QqX2sg0vjmgJ/jGAuLZZvYcRlndI54hLPiwLC9JzXlFBerfxN5JiS7kpEUG0mrXS3Q==}
 
   svgo@3.0.2:
     resolution: {integrity: sha512-Z706C1U2pb1+JGP48fbazf3KxHrWOsLme6Rv7imFBn5EnuanDW1GPaA/P1/dvObE670JDePC3mnj0k0B7P0jjQ==}
@@ -6688,6 +6709,9 @@ packages:
   webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
+
+  webp-converter-browser@1.0.4:
+    resolution: {integrity: sha512-ZkcrrM4TyxBI7mPmE4uG6PU2MF5YXhKTtvub/ll/4ZjXM7THcms0C0tA10CwnsrLzRBC+ry/sUzwpW6vdPzA8g==}
 
   webpack-sources@3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
@@ -11490,6 +11514,8 @@ snapshots:
 
   ignore@5.2.4: {}
 
+  image-in-browser@3.2.1: {}
+
   image-size@0.5.5:
     optional: true
 
@@ -13049,6 +13075,8 @@ snapshots:
       hash-base: 3.0.4
       inherits: 2.0.4
 
+  roboto-base64@0.1.2: {}
+
   rollup-plugin-terser@7.0.2(rollup@2.79.1):
     dependencies:
       '@babel/code-frame': 7.26.2
@@ -13439,6 +13467,8 @@ snapshots:
       clipboardy: 4.0.0
       commander: 12.1.0
       svgo: 3.3.2
+
+  svg2png-wasm@1.4.1: {}
 
   svgo@3.0.2:
     dependencies:
@@ -14262,6 +14292,10 @@ snapshots:
   webidl-conversions@4.0.2: {}
 
   webidl-conversions@7.0.0: {}
+
+  webp-converter-browser@1.0.4:
+    dependencies:
+      '@babel/runtime': 7.23.2
 
   webpack-sources@3.2.3: {}
 

@@ -126,6 +126,7 @@ declare module '@vue/runtime-core' {
     IconMdiTranslate: typeof import('~icons/mdi/translate')['default']
     IconMdiTriangleDown: typeof import('~icons/mdi/triangle-down')['default']
     IconMdiVideo: typeof import('~icons/mdi/video')['default']
+    ImageConverter: typeof import('./src/tools/image-converter/image-converter.vue')['default']
     ImageExifReader: typeof import('./src/tools/image-exif-reader/image-exif-reader.vue')['default']
     ImageResizer: typeof import('./src/tools/image-resizer/image-resizer.vue')['default']
     ImageToCss: typeof import('./src/tools/image-to-css/image-to-css.vue')['default']

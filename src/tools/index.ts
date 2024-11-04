@@ -17,6 +17,7 @@ import { tool as extractTextFromHtml } from './extract-text-from-html';
 import { tool as colorWheel } from './color-wheel';
 import { tool as codeHighlighter } from './code-highlighter';
 import { tool as currencyConverter } from './currency-converter';
+import { tool as imageConverter } from './image-converter';
 
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as textToUnicode } from './text-to-unicode';
@@ -195,14 +196,19 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Images and videos',
     components: [
+
       qrCodeGenerator,
+
       wifiQrCodeGenerator,
+
       svgPlaceholderGenerator,
+
       cameraRecorder,
       imageResizer,
       ocrImage,
       imageExifReader,
       removeExif,
+      imageConverter,
     ],
   },
   {
