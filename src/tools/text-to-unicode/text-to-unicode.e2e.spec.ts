@@ -6,20 +6,20 @@ test.describe('Tool - Text to Unicode', () => {
   });
 
   test('Has correct title', async ({ page }) => {
-    await expect(page).toHaveTitle('Text to Unicode - IT Tools');
+    await expect(page).toHaveTitle('GoDev.Run - Text to Unicode');
   });
 
   test('Text to unicode conversion', async ({ page }) => {
-    await page.getByTestId('text-to-unicode-input').fill('it-tools');
+    await page.getByTestId('text-to-unicode-input').fill('godev.run');
     const unicode = await page.getByTestId('text-to-unicode-output').inputValue();
 
-    expect(unicode).toEqual('&#105;&#116;&#45;&#116;&#111;&#111;&#108;&#115;');
+    expect(unicode).toEqual('&#103;&#111;&#100;&#101;&#118;&#46;&#114;&#117;&#110;');
   });
 
   test('Unicode to text conversion', async ({ page }) => {
-    await page.getByTestId('unicode-to-text-input').fill('&#105;&#116;&#45;&#116;&#111;&#111;&#108;&#115;');
+    await page.getByTestId('unicode-to-text-input').fill('&#103;&#111;&#100;&#101;&#118;&#46;&#114;&#117;&#110;');
     const text = await page.getByTestId('unicode-to-text-output').inputValue();
 
-    expect(text).toEqual('it-tools');
+    expect(text).toEqual('godev.run');
   });
 });

@@ -15,6 +15,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import markdown from 'vite-plugin-vue-markdown';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import topLevelAwait from "vite-plugin-top-level-await";
 
 const baseUrl = process.env.BASE_URL ?? '/';
 
@@ -55,9 +57,13 @@ export default defineConfig({
     svgLoader(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        // Increase the maximum file size to cache
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
+      },
       strategies: 'generateSW',
       manifest: {
-        name: 'IT Tools',
+        name: 'GoDev.Run',
         description: 'Aggregated set of useful tools for developers.',
         display: 'standalone',
         lang: 'fr-FR',
@@ -97,6 +103,15 @@ export default defineConfig({
       resolvers: [NaiveUiResolver(), IconsResolver({ prefix: 'icon' })],
     }),
     Unocss(),
+    nodePolyfills({
+      exclude: ['fs'],
+    }),
+    topLevelAwait({
+      // The export name of top-level await promise for each chunk module
+      promiseExportName: '__tla',
+      // The function to generate import names of top-level await promise in each chunk module
+      promiseImportName: i => `__tla_${i}`,
+    }),
   ],
   base: baseUrl,
   resolve: {
@@ -112,5 +127,17 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    rollupOptions: {
+      external: ['./out/isolated_vm', 'node:fs/promises', 'fs'],
+    },
+  },
+  optimizeDeps: {
+    exclude: ['isolated-vm'],
+    include: ['pdfjs-dist'], // optionally specify dependency name
+    esbuildOptions: {
+      supported: {
+        'top-level-await': true,
+      },
+    },
   },
 });
