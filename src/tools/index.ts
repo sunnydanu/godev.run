@@ -118,6 +118,7 @@ import { tool as dockerComposeConverter } from './docker-compose-converter';
 import { tool as imageExifReader } from './image-exif-reader';
 import { tool as yamlViewer } from './yaml-viewer';
 import { tool as ipRangeToCidr } from './ip-range-to-cidr';
+import { tool as micTester } from './mic-tester';
 
 export const toolsByCategory: ToolCategory[] = [
   {
@@ -192,6 +193,7 @@ export const toolsByCategory: ToolCategory[] = [
       jsUnobfuscator,
       imageToCss,
       colorWheel,
+      micTester,
     ],
   },
   {
