@@ -12,6 +12,8 @@ import { tool as emailNormalizer } from './email-normalizer';
 import { tool as energyComputer } from './energy-computer';
 import { tool as peerShare } from './peer-share';
 import { tool as macAddressConverter } from './mac-address-converter';
+import { tool as jsUnobfuscator } from './js-unobfuscator';
+
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as textToUnicode } from './text-to-unicode';
 import { tool as gzipConverter } from './gzip-converter';
@@ -175,6 +177,7 @@ export const toolsByCategory: ToolCategory[] = [
       jsonDiff,
       safelinkDecoder,
       apiTester,
+      jsUnobfuscator,
     ],
   },
   {

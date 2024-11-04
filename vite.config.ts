@@ -102,7 +102,9 @@ export default defineConfig({
       resolvers: [NaiveUiResolver(), IconsResolver({ prefix: 'icon' })],
     }),
     Unocss(),
-    nodePolyfills(),
+    nodePolyfills({
+      exclude: ['fs'],
+    }),
   ],
   base: baseUrl,
   resolve: {
@@ -118,8 +120,12 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    rollupOptions: {
+      external: ['./out/isolated_vm'],
+    },
   },
   optimizeDeps: {
+    exclude: ['isolated-vm'],
     include: ['pdfjs-dist'], // optionally specify dependency name
     esbuildOptions: {
       supported: {
