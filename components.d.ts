@@ -54,7 +54,6 @@ declare module '@vue/runtime-core' {
     CModalValue: typeof import('./src/ui/c-modal-value/c-modal-value.vue')['default']
     'CModalValue.demo': typeof import('./src/ui/c-modal-value/c-modal-value.demo.vue')['default']
     CMonacoEditor: typeof import('./src/ui/c-monaco-editor/c-monaco-editor.vue')['default']
-    CodeHighlighter: typeof import('./src/tools/code-highlighter/code-highlighter.vue')['default']
     CollapsibleToolMenu: typeof import('./src/components/CollapsibleToolMenu.vue')['default']
     ColorConverter: typeof import('./src/tools/color-converter/color-converter.vue')['default']
     ColoredCard: typeof import('./src/components/ColoredCard.vue')['default']
