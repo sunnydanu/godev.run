@@ -15,6 +15,7 @@ import { tool as macAddressConverter } from './mac-address-converter';
 import { tool as jsUnobfuscator } from './js-unobfuscator';
 import { tool as extractTextFromHtml } from './extract-text-from-html';
 import { tool as colorWheel } from './color-wheel';
+import { tool as codeHighlighter } from './code-highlighter';
 import { tool as currencyConverter } from './currency-converter';
 
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
@@ -222,6 +223,7 @@ export const toolsByCategory: ToolCategory[] = [
       xmlFormatter,
       yamlViewer,
       emailNormalizer,
+      codeHighlighter,
       regexTester,
       regexMemo,
       extractTextFromHtml,
