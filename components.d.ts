@@ -57,6 +57,7 @@ declare module '@vue/runtime-core' {
     CollapsibleToolMenu: typeof import('./src/components/CollapsibleToolMenu.vue')['default']
     ColorConverter: typeof import('./src/tools/color-converter/color-converter.vue')['default']
     ColoredCard: typeof import('./src/components/ColoredCard.vue')['default']
+    ColorWheel: typeof import('./src/tools/color-wheel/color-wheel.vue')['default']
     CommandPalette: typeof import('./src/modules/command-palette/command-palette.vue')['default']
     CommandPaletteOption: typeof import('./src/modules/command-palette/components/command-palette-option.vue')['default']
     CrontabGenerator: typeof import('./src/tools/crontab-generator/crontab-generator.vue')['default']
