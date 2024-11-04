@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && NODE_OPTIONS=--max_old_space_size=4096 vite build",
+    "build": "vue-tsc --noEmit && NODE_OPTIONS=--max_old_space_size=8192 vite build",
     "preview": "vite preview --port 5050",
     "test": "npm run test:unit",
     "test:unit": "vitest --environment jsdom",
@@ -76,8 +76,8 @@
     "figlet": "^1.7.0",
     "figue": "^1.2.0",
     "fuse.js": "^6.6.2",
-    "hash-wasm": "^4.9.0",
     "generate-schema": "^2.6.0",
+    "hash-wasm": "^4.9.0",
     "highlight.js": "^11.7.0",
     "iarna-toml-esm": "^3.0.5",
     "ibantools": "^4.3.3",
@@ -113,6 +113,7 @@
     "qrcode": "^1.5.1",
     "randexp": "^0.5.3",
     "sql-formatter": "^13.0.0",
+    "svg-to-url": "^4.0.0",
     "tesseract.js": "^5.0.4",
     "ua-parser-js": "^1.0.35",
     "ulid": "^2.3.0",
@@ -120,7 +121,7 @@
     "unplugin-auto-import": "^0.16.4",
     "uuid": "^9.0.0",
     "vanilla-jsoneditor": "^0.23.8",
-    "vite-plugin-node-polyfills": "^0.21.0",
+    "vite-plugin-node-polyfills": "^0.22.0",
     "vue": "^3.3.4",
     "vue-i18n": "^9.9.1",
     "vue-router": "^4.1.6",
@@ -178,6 +179,5 @@
     "vitest": "^0.34.0",
     "workbox-window": "^7.0.0",
     "zx": "^7.2.1"
-  },
-  "packageManager": "pnpm@8.15.3"
+  }
 }
