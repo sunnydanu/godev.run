@@ -128,7 +128,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     rollupOptions: {
-      external: ['./out/isolated_vm', 'node:fs/promises', 'fs'],
+      external: ['./out/isolated_vm', 'node:fs/promises', 'fs', 'regex'],
     },
   },
   optimizeDeps: {
