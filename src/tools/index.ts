@@ -16,6 +16,7 @@ import { tool as jsUnobfuscator } from './js-unobfuscator';
 import { tool as extractTextFromHtml } from './extract-text-from-html';
 import { tool as colorWheel } from './color-wheel';
 import { tool as codeHighlighter } from './code-highlighter';
+import { tool as currencyConverter } from './currency-converter';
 
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as textToUnicode } from './text-to-unicode';
@@ -52,6 +53,7 @@ import { tool as tomlToJson } from './toml-to-json';
 import { tool as jsonToCsv } from './json-to-csv';
 import { tool as cameraRecorder } from './camera-recorder';
 import { tool as listConverter } from './list-converter';
+import { tool as listComparer } from './list-comparer';
 import { tool as phoneParserAndFormatter } from './phone-parser-and-formatter';
 import { tool as jsonDiff } from './json-diff';
 import { tool as ipv4RangeExpander } from './ipv4-range-expander';
@@ -151,10 +153,12 @@ export const toolsByCategory: ToolCategory[] = [
       jsonToYaml,
       jsonToToml,
       listConverter,
+      listComparer,
       tomlToJson,
       tomlToYaml,
       xmlToJson,
       jsonToXml,
+      currencyConverter,
       markdownToHtml,
       gzipConverter,
       uuidConverter,
