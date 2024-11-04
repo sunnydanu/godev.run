@@ -108,7 +108,7 @@ describe('otp functions', () => {
   describe('buildKeyUri', () => {
     it('build a key uri string', () => {
       expect(buildKeyUri({ secret: 'JBSWY3DPEHPK3PXP' })).to.eql(
-        'otpauth://totp/godev-run:demo-user?issuer=godev-run&secret=JBSWY3DPEHPK3PXP&algorithm=SHA1&digits=6&period=30',
+        'otpauth://totp/godev.run:demo-user?issuer=godev.run&secret=JBSWY3DPEHPK3PXP&algorithm=SHA1&digits=6&period=30',
       );
 
       expect(
