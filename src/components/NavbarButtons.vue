@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BrandGithub, BrandTwitter, InfoCircle, Moon, Sun } from '@vicons/tabler';
+import { BrandGithub, InfoCircle, Moon, Sun } from '@vicons/tabler';
 import { useStyleStore } from '@/stores/style.store';
 
 const styleStore = useStyleStore();
@@ -11,25 +11,12 @@ const { isDarkTheme } = toRefs(styleStore);
     <c-button
       circle
       variant="text"
-      href="https://github.com/CorentinTh/it-tools"
+      href="https://github.com/sunnydanu/help.godev.run"
       target="_blank"
       rel="noopener noreferrer"
       :aria-label="$t('home.nav.githubRepository')"
     >
       <n-icon size="25" :component="BrandGithub" />
-    </c-button>
-  </c-tooltip>
-
-  <c-tooltip :tooltip="$t('home.nav.twitter')" position="bottom">
-    <c-button
-      circle
-      variant="text"
-      href="https://twitter.com/ittoolsdottech"
-      rel="noopener"
-      target="_blank"
-      :aria-label="$t('home.nav.twitterAccount')"
-    >
-      <n-icon size="25" :component="BrandTwitter" />
     </c-button>
   </c-tooltip>
 
