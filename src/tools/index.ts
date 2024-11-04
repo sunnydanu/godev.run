@@ -31,6 +31,7 @@ import { tool as propertiesToYaml } from './properties-to-yaml';
 import { tool as apiTester } from './api-tester';
 import { tool as imageToCss } from './image-to-css';
 import { tool as jsonToSchema } from './json-to-schema';
+import { tool as curlConverter } from './curl-converter';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
 import { tool as uuidConverter } from './uuid-converter';
 import { tool as numeronymGenerator } from './numeronym-generator';
@@ -219,6 +220,7 @@ export const toolsByCategory: ToolCategory[] = [
       regexMemo,
       extractTextFromHtml,
       jsonToSchema,
+      curlConverter,
     ],
   },
   {
