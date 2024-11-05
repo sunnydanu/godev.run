@@ -16,7 +16,6 @@ import markdown from 'vite-plugin-vue-markdown';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import topLevelAwait from "vite-plugin-top-level-await";
 
 const baseUrl = process.env.BASE_URL ?? '/';
 
@@ -105,12 +104,6 @@ export default defineConfig({
     Unocss(),
     nodePolyfills({
       exclude: ['fs'],
-    }),
-    topLevelAwait({
-      // The export name of top-level await promise for each chunk module
-      promiseExportName: '__tla',
-      // The function to generate import names of top-level await promise in each chunk module
-      promiseImportName: i => `__tla_${i}`,
     }),
   ],
   base: baseUrl,
