@@ -101,9 +101,6 @@ importers:
       crypto-js:
         specifier: ^4.1.1
         version: 4.1.1
-      curlconverter:
-        specifier: ^4.10.1
-        version: 4.11.0
       currency-codes-ts:
         specifier: ^3.0.0
         version: 3.0.0
@@ -3236,10 +3233,6 @@ packages:
 
   csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-
-  curlconverter@4.11.0:
-    resolution: {integrity: sha512-jBSvfDN10L6rGWVlkAYgtkIG8lYprDvtBgos7mafxtv15keYeQWsxUgnzns3JmqEcGJMeaGlDNdRUszURPCUaw==}
-    hasBin: true
 
   currency-codes-ts@3.0.0:
     resolution: {integrity: sha512-ZJeCpq5uY2t8dDl4xdF15shkp5o8jrHcD4lHftK/O8j8xTHlXg0E5YhpZbRJvnLRaKe+JQh1/q1AI9Wc2Dl3Nw==}
@@ -10247,17 +10240,6 @@ snapshots:
   csstype@3.0.11: {}
 
   csstype@3.1.2: {}
-
-  curlconverter@4.11.0:
-    dependencies:
-      jsesc: 3.0.2
-      lossless-json: 4.0.2
-      tree-sitter: 0.21.1
-      tree-sitter-bash: 0.23.1(tree-sitter@0.21.1)
-      web-tree-sitter: 0.24.3
-      yamljs: 0.3.0
-    transitivePeerDependencies:
-      - tree_sitter
 
   currency-codes-ts@3.0.0:
     dependencies:
