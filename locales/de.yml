@@ -59,11 +59,11 @@ about:
 
     Wenn du ein Tool benötigst, das hier noch nicht vorhanden ist, 
     und du denkst, dass es nützlich sein könnte, bist du herzlich eingeladen, 
-    einen Feature-Request im [Issues-Bereich](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    einen Feature-Request im [Issues-Bereich](https://github.com/sunnydanu/godev.run/issues/new/choose) 
     im GitHub-Repository einzureichen.
 
     Und wenn du einen Fehler gefunden hast oder etwas nicht wie erwartet 
-    funktioniert, melde bitte einen Fehler im [Issues-Bereich](https://github.com/sunnydanu/help.godev.run/issues/new/choose) 
+    funktioniert, melde bitte einen Fehler im [Issues-Bereich](https://github.com/sunnydanu/godev.run/issues/new/choose) 
     im GitHub-Repository.
 favoriteButton:
   remove: Aus Favoriten entfernen
