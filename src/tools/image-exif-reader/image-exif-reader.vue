@@ -146,10 +146,6 @@ const addSpacesToTagNames = (label: string) => label.replace(/([A-Z][a-z])/g, ' 
       </div>
 
       <div v-if="status === 'parsed'" style="flex: 0 0 100%" mt-5 flex flex-col gap-4 />
-
-      <div font-size-3>
-        Made with <a href="https://github.com/mattiasw/ExifReader" target="_blank">ExifReader</a>
-      </div>
     </div>
   </div>
 </template>
