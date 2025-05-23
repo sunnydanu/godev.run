@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2025.05.23-2aa8a3c
+
+### Bug fixes
+- **json-editor**: lint fix (2aa8a3c)
+- **json-editor**: removed path (bd644ce)
+- **ui**: overflow fix (69830ac)
+
+### Other
+-  Merge pull request #268 from sunnydanu/release/2.0.0 (94f14ef)
+-  Merge branch 'main' into release/2.0.0 (9f75c39)
+-  Merge pull request #265 from sunnydanu/pr-1319-feat(new-tool)-code-highlighter (3840ee3)
+
+### This pr incorporates contributions from upstream [pr-#373](https
+-  //github.com/CorentinTh/it-tools/pull/373) of [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) . All original commits and authorship are retained. Some adjustments may have been made for compatibility or bug fixes. (be4fba0)
+
+## Version 2025.05.23-bd644ce
+
+### Bug fixes
+- **json-editor**: removed path (bd644ce)
+- **ui**: overflow fix (69830ac)
+
+### Other
+-  Merge pull request #268 from sunnydanu/release/2.0.0 (94f14ef)
+-  Merge branch 'main' into release/2.0.0 (9f75c39)
+-  Merge pull request #265 from sunnydanu/pr-1319-feat(new-tool)-code-highlighter (3840ee3)
+
+### This pr incorporates contributions from upstream [pr-#373](https
+-  //github.com/CorentinTh/it-tools/pull/373) of [CorentinTh/it-tools](https://github.com/CorentinTh/it-tools) . All original commits and authorship are retained. Some adjustments may have been made for compatibility or bug fixes. (be4fba0)
+
 ## Version 2024.11.06-4c6f110
 
 ### Features
