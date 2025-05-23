@@ -1,6 +1,6 @@
 {
   "name": "godev-run",
-  "version": "2025.5.23-2aa8a3c",
+  "version": "2025.5.23-d382949",
   "packageManager": "pnpm@8.15.3",
   "description": "GoDev.Run is a free, open-source collection of online tools for developers, exploring the possibilities of JavaScript—all powered entirely in your browser.",
   "author": "Sunny Danu <mail@sunnydanu.com> (https://github.com/sunnydanu)",
