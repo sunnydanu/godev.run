@@ -73,7 +73,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/sunnydanu/godev.run/blob/master/CHANGELOG.md#version-${version}`"
+                :href="`https://github.com/sunnydanu/godev.run/blob/main/CHANGELOG.md#version-${version}`"
               >
                 {{ commitSha }}
               </c-link>
