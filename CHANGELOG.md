@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2025.05.23-d382949
+
+### Bug fixes
+- **ui**: changelog link fixed (58e0747)
+- **ui**: changelog link fixed (1cc2527)
+
+### Other
+-  Merge pull request #269 from sunnydanu/fix-overflow-on-ui (d382949)
+
 ## Version 2025.05.23-2aa8a3c
 
 ### Bug fixes
