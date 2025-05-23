@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import JsonEditorVue from 'json-editor-vue';
-import { type AfterSelection, type InsideSelection, type JSONEditorSelection, type KeySelection, type MultiSelection, type ValueSelection, isAfterSelection, isInsideSelection, isKeySelection, isMultiSelection, isValueSelection, stringifyJSONPath } from 'vanilla-jsoneditor';
 import 'vanilla-jsoneditor/themes/jse-theme-dark.css';
 import { useStyleStore } from '@/stores/style.store';
 
 const styleStore = useStyleStore();
 
 const jsonText = ref('{ "a": { "array": [1, 2, 3] } }');
-const jsonPath = ref('');
 </script>
 
 <template>
@@ -16,7 +14,6 @@ const jsonPath = ref('');
       v-model="jsonText"
       mode="text"
       :class="styleStore.isDarkTheme ? 'jse-theme-dark' : ''"
-
       mb-2
     />
 
